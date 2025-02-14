@@ -1,5 +1,13 @@
+import styled from "styled-components";
+
+const HeaderContainer = styled.div`
+  width: 100%;
+  height: 30px;
+  background-color: red;
+`;
+
 function Header() {
-  return null;
+  return <HeaderContainer></HeaderContainer>;
 }
 
 export default Header;
