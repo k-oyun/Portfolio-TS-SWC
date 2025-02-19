@@ -5,7 +5,6 @@ import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/mobile.png";
 import pc from "../Assets/Image/pc.png";
 import myPic from "../Assets/Image/mabro.jpg";
-import tvscreen from "../Assets/Image/tvscreen.png";
 
 interface styleType {
   $ismobile?: boolean;
@@ -47,8 +46,7 @@ const DarkToBright = keyframes`
   100% {
     
     opacity: 1;
-  }
-`;
+  }`;
 const AboutMeContainer = styled.div<styleType>`
   display: flex;
   flex-direction: column;
@@ -64,7 +62,6 @@ const AboutMeContainer = styled.div<styleType>`
   opacity: 0.9;
   animation: ${DarkToBright} 2s ease-in-out forwards;
 `;
-
 const oFFflicker = keyframes`
   0% {
     opacity: 1;
@@ -92,8 +89,7 @@ const oFFflicker = keyframes`
   }
   100% {
     opacity: 1;
-  }
-`;
+  }`;
 const flickerToYellow = keyframes`
   0% {
     filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red) drop-shadow(0 0 15px red);
@@ -110,19 +106,19 @@ const flickerToYellow = keyframes`
   }
   50% {
     opacity: 0.8;
-    
+
   }
   65% {
     opacity: 0.6;
-    
+
   }
   75% {
     opacity: 0.8;
-    
+
   }
   80% {
     opacity: 0.6;
-    
+
   }
   95%{
     opacity: 0.9;
@@ -131,8 +127,7 @@ const flickerToYellow = keyframes`
     filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow) drop-shadow(0 0 15px yellow);
     stroke: yellow;
     opacity: 1;
-  }
-`;
+  }`;
 const OffSwitchSvg = styled(motion.svg)<styleType>`
   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
@@ -141,7 +136,6 @@ const OffSwitchSvg = styled(motion.svg)<styleType>`
     drop-shadow(0 0 15px red);
   animation: ${oFFflicker} 1.2s infinite;
 `;
-
 const OnSwitchSvg = styled(motion.svg)<styleType>`
   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
@@ -150,7 +144,6 @@ const OnSwitchSvg = styled(motion.svg)<styleType>`
     drop-shadow(0 0 15px yellow);
   animation: ${flickerToYellow} 2s ease-in-out forwards;
 `;
-
 const GameScreen = styled.div<styleType>`
   display: flex;
   flex-direction: ${(props) => (props.$ismobile ? "column" : "row")};
@@ -172,20 +165,19 @@ const GameScreen = styled.div<styleType>`
   transition: box-shadow 0.5s ease, border 0.5s ease;
   margin-bottom: ${(props) => (props.$ismobile ? "50px" : "50px")};
 `;
-
-// const Background = styled.div<styleType>`
+// const Background = styled.div<styleType>
 //   display: flex;
 //   width: 100%;
 //   height: 100%;
 //   position: absolute;
 //   flex-direction: ${(props) => (props.$ismobile ? "column" : "row")};
 //   background-image: ${(props) =>
-//     props.$ispoweron ? `url(${tvscreen})` : "none"};
+//     props.$ispoweron ? url(${tvscreen}) : "none"};
 //   background-position: center;
 //   background-size: cover;
 //   opacity: ${(props) => (props.$ispoweron ? "1" : "0")};
 //   transition: opacity 0.5s ease-in-out;
-// `;
+// ;
 
 const ImgContainer = styled.div<styleType>`
   display: flex;
@@ -197,7 +189,6 @@ const ImgContainer = styled.div<styleType>`
   transition: opacity 0.5s ease-in-out;
   background-color: black;
 `;
-
 const MyImg = styled.img<styleType>`
   /* 원래 사진 비율  */
   /* width: 32px; */
@@ -205,7 +196,6 @@ const MyImg = styled.img<styleType>`
   width: ${(props) => (props.$ismobile ? "128px" : "160px")};
   height: ${(props) => (props.$ismobile ? "164px" : "205px")};
 `;
-
 const TxtContatiner = styled.div<styleType>`
   display: flex;
   /* text-align: center; */
@@ -220,14 +210,12 @@ const TxtContatiner = styled.div<styleType>`
     0 0 27px #00aa00, 0 0 37px #00aa00, 0 0 52px #00aa00, 0 0 72px #00aa00;
   transition: opacity 0.5s ease-in-out;
 `;
-
 const ControlPanel = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 10px;
 `;
-
 const Button = styled.button<styleType>`
   padding: 15px 30px;
   font-size: 16px;
@@ -246,14 +234,12 @@ const Button = styled.button<styleType>`
     transform: scale(0.95);
   }
 `;
-
 function AboutMe() {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
 
   const [isPowerOn, setIsPowerOn] = useState<boolean>(false);
-
   const onclickPowerBtn = () => {
     setIsPowerOn((prev) => !prev);
   };

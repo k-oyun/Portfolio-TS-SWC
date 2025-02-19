@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { RefObject, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 
@@ -9,6 +9,7 @@ interface styleType {
   $isprojects?: boolean;
   $iscontact?: boolean;
 }
+
 const HeaderNav = styled.nav<styleType>`
   display: flex;
   align-items: center;
@@ -80,7 +81,7 @@ const HeaderList = styled.li<styleType>`
       : props.$iscontact
       ? "0 0 5px #00aa00, 0 0 10px #00aa00, 0 0 20px #00aa00, 0 0 30px #00aa00, 0 0 40px #00aa00, 0 0 55px #00aa00, 0 0 75px #00aa00"
       : " 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080; "};
-
+  cursor: pointer;
   &:hover {
     animation: ${brokenNeon} 1.2s ease-in-out,
       ${fiXedNeon} 1.2s ease-in-out 1.2s forwards;
@@ -139,19 +140,29 @@ function Header() {
     }));
   };
 
+  const scrollMove = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <HeaderNav $ismobile={isMobile}>
       <HeaderList
         $ismobile={isMobile}
         $isaboutme={headerState.isAboutMe}
-        onClick={onclickAboutMe}
+        onClick={() => {
+          onclickAboutMe();
+        }}
       >
         About Me
       </HeaderList>
       <HeaderList
         $ismobile={isMobile}
         $isskills={headerState.isSkills}
-        onClick={onclickSkills}
+        onClick={() => {
+          onclickSkills();
+        }}
       >
         Skills
       </HeaderList>

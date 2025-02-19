@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
+import Skills from "../Components/Skills";
+import { useRef } from "react";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -11,12 +13,14 @@ const MainContainer = styled.div`
   /* background-color: #11264f; */
   /* 검정 배경 */
   background-color: black;
+  scroll-snap-type: y mandatory;
 `;
 function King() {
   return (
     <MainContainer>
       <Header />
       <AboutMe />
+      <Skills />
     </MainContainer>
   );
 }
