@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Header from "../Components/Header";
+import AboutMe from "../Components/AboutMe";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ function King() {
   return (
     <MainContainer>
       <Header />
+      <AboutMe />
     </MainContainer>
   );
 }

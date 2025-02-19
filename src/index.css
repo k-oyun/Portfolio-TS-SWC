@@ -7,3 +7,8 @@ body,
   height: 100%;
   background-color: black;
 }
+
+@font-face {
+  font-family: "Neon"; /* 사용할 폰트의 이름을 정의 */
+  src: url("src/Assets/Neoneon.otf"); /* 폰트 파일의 위치 */
+}
