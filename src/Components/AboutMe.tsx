@@ -5,6 +5,8 @@ import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/mobile.png";
 import pc from "../Assets/Image/pc.png";
 import myPic from "../Assets/Image/mabro.jpg";
+import muscle from "../Assets/Image/muscle.png";
+import musclesmall from "../Assets/Image/muslcesmall.png";
 
 interface styleType {
   $ismobile?: boolean;
@@ -51,7 +53,7 @@ const AboutMeContainer = styled.div<styleType>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding-top: ${(props) => (props.$ismobile ? "90px" : "120px")};
   display: flex;
   align-items: center;
@@ -150,7 +152,7 @@ const GameScreen = styled.div<styleType>`
   align-items: center;
   justify-content: center;
   width: ${(props) => (props.$ismobile ? "300px" : "1000px")};
-  height: ${(props) => (props.$ismobile ? "400px" : "500px")};
+  height: ${(props) => (props.$ismobile ? "450px" : "500px")};
   background-color: #000;
   border-radius: 15px;
   box-shadow: ${(props) =>
@@ -158,36 +160,23 @@ const GameScreen = styled.div<styleType>`
       ? "0 0 30px hsla(120, 100%, 50%, 0.5)"
       : "0 0 30px hsla(0, 100%, 50%, 0.5)"};
   border: ${(props) =>
-    props.$ispoweron ? "5px solid #00ff00" : "5px solid red"};
-  margin: 30px 0px;
+    props.$ispoweron ? "5px solid #00ff00" : "5px solid #ff0080"};
+  margin: 15px 0px;
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.5s ease, border 0.5s ease;
-  margin-bottom: ${(props) => (props.$ismobile ? "50px" : "50px")};
+  margin-bottom: ${(props) => (props.$ismobile ? "30px" : "50px")};
 `;
-// const Background = styled.div<styleType>
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   flex-direction: ${(props) => (props.$ismobile ? "column" : "row")};
-//   background-image: ${(props) =>
-//     props.$ispoweron ? url(${tvscreen}) : "none"};
-//   background-position: center;
-//   background-size: cover;
-//   opacity: ${(props) => (props.$ispoweron ? "1" : "0")};
-//   transition: opacity 0.5s ease-in-out;
-// ;
 
 const ImgContainer = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 100%;
+  width: ${(props) => (props.$ismobile ? "30%" : "50%")};
+  height: ${(props) => (props.$ismobile ? "50%" : "50%")};
   opacity: ${(props) => (props.$ispoweron ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
-  background-color: black;
+  margin-top: ${(props) => (props.$ismobile ? "40px" : "0px")};
 `;
 const MyImg = styled.img<styleType>`
   /* 원래 사진 비율  */
@@ -196,9 +185,14 @@ const MyImg = styled.img<styleType>`
   width: ${(props) => (props.$ismobile ? "128px" : "160px")};
   height: ${(props) => (props.$ismobile ? "164px" : "205px")};
 `;
+
+const MuscleImg = styled.img<styleType>`
+  width: ${(props) => (props.$ismobile ? "2%" : "245px")};
+  filter: drop-shadow(0 0 1px yellow) drop-shadow(0 0 5px yellow)
+    drop-shadow(0 0 7px yellow);
+`;
 const TxtContatiner = styled.div<styleType>`
   display: flex;
-  /* text-align: center; */
   justify-content: center;
   align-items: center;
   width: ${(props) => (props.$ismobile ? "100%" : "50%")};
@@ -214,14 +208,14 @@ const ControlPanel = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 10px;
+  padding-top: 10px;
 `;
 const Button = styled.button<styleType>`
   padding: 15px 30px;
   font-size: 16px;
   background-color: black;
   border: ${(props) =>
-    props.$ispoweron ? "2px solid #00ff00" : "2px solid red"};
+    props.$ispoweron ? "2px solid #00ff00" : "2px solid #ff0080"};
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
@@ -246,9 +240,8 @@ function AboutMe() {
   return (
     <AboutMeContainer $ismobile={isMobile}>
       <GameScreen $ismobile={isMobile} $ispoweron={isPowerOn}>
-        {/* <Background $ispoweron={isPowerOn}> */}
         <ImgContainer $ismobile={isMobile} $ispoweron={isPowerOn}>
-          <MyImg src={myPic}></MyImg>
+          <MuscleImg src={musclesmall}></MuscleImg>
         </ImgContainer>
         <TxtContatiner $ismobile={isMobile} $ispoweron={isPowerOn}>
           근육같은 개발자 권오윤
@@ -274,7 +267,6 @@ function AboutMe() {
           함께 성장하고 발전하기 위해 노력하며, <br />
           주변 사람들과 나란히 걷는 것을 중요하게 생각합니다.
         </TxtContatiner>
-        {/* </Background> */}
       </GameScreen>
 
       <ControlPanel>
