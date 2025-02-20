@@ -111,8 +111,8 @@ const OnSwitchSvg = styled(motion.svg)<styleType>`
 // ------------------------------------------
 
 const LogoContainer = styled.div<styleType>`
-  width: ${(props) => (props.$ismobile ? "350px" : "800px")};
-  height: ${(props) => (props.$ismobile ? "350px" : "800px")};
+  width: ${(props) => (props.$ismobile ? "350px" : "650px")};
+  height: ${(props) => (props.$ismobile ? "350px" : "650px")};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,6 +175,11 @@ function Skills() {
       size: isMobile ? 50 : 130,
       color: "#18A8ED",
     },
+    {
+      src: "src/Assets/Image/reactquery.png",
+      size: isMobile ? 40 : 120,
+      color: "#FF4154",
+    },
   ];
   const [isPowerOn, setIsPowerOn] = useState<boolean>(false);
   const LogoContainerRef = useRef<HTMLDivElement | null>(null);
@@ -182,7 +187,7 @@ function Skills() {
   const onclickPowerBtn = () => {
     setIsPowerOn((prev) => !prev);
   };
-  const startingAngle = Math.PI / 13;
+  const startingAngle = Math.PI / 8;
   useEffect(() => {
     if (LogoContainerRef.current) {
       const height = LogoContainerRef.current.clientHeight;
@@ -245,15 +250,15 @@ function Skills() {
               icon.size / 2
             : dimensions.center -
               dimensions.radius * Math.sin(angle) -
-              icon.size / 2; // Y축 계산
+              icon.size / 2 +
+              10; // Y축 계산
           const left = isMobile
             ? dimensions.center +
               dimensions.radius * Math.cos(angle) -
               icon.size / 2
             : dimensions.center +
               dimensions.radius * Math.cos(angle) -
-              icon.size / 2 +
-              1; // X축 계산
+              icon.size / 2; // X축 계산
 
           return (
             <Icon
