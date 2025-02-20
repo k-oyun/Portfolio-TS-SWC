@@ -119,7 +119,6 @@ const LogoContainer = styled.div<styleType>`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: blue; */
   border-radius: 50%;
   position: relative;
 `;
@@ -134,8 +133,12 @@ const Icon = styled.img<styleType>`
     props.$ispoweron
       ? `grayscale(0%) drop-shadow(0 0 5px ${props.$logocolor}) drop-shadow(0 0 10px ${props.$logocolor}) drop-shadow(0 0 15px ${props.$logocolor})`
       : `grayscale(100%) drop-shadow(0 0 0px ${props.$logocolor})`};
-
   transition: filter 2s ease-in-out;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 
 const IconTxtContainer = styled.div<styleType>`
@@ -144,8 +147,6 @@ const IconTxtContainer = styled.div<styleType>`
   text-align: center;
   color: white;
   font-size: ${(props) => (props.$ismobile ? "8px" : "15px")};
-  opacity: ${(props) => (props.$ispoweron ? 1 : 0)};
-
   text-shadow: ${(
     props
   ) => `0 0 1px , 0 0 7px ${props.$logocolor}, 0 0 10px ${props.$logocolor},
@@ -247,7 +248,8 @@ function Skills() {
       text: (
         <>
           서버 상태 관리 간소화 <br />
-          캐싱을 이용한 성능 향상
+          캐싱을 이용한 성능 향상 <br />
+          react-query 사용
         </>
       ),
     },
@@ -268,8 +270,8 @@ function Skills() {
       setDimensions({ center: center, radius: radius });
     }
   }, [isMobile]);
-  const [activeIcon, setActiveIcon] = useState<number | null>(null);
 
+  const [activeIcon, setActiveIcon] = useState<number | null>(null);
   const onclickIcon = (index: number) => {
     if (activeIcon === index) {
       setActiveIcon(null);
@@ -343,7 +345,6 @@ function Skills() {
           return (
             <React.Fragment key={index}>
               <Icon
-                key={index}
                 src={icon.src}
                 $top={top}
                 $left={left}
@@ -352,15 +353,13 @@ function Skills() {
                 $ispoweron={isPowerOn}
                 onClick={() => onclickIcon(index)}
               />
-              {activeIcon === index && (
-                <IconTxtContainer
-                  $ispoweron={isPowerOn}
-                  $ismobile={isMobile}
-                  $logocolor={icon.color}
-                >
-                  {icon.text}
-                </IconTxtContainer>
-              )}
+              <IconTxtContainer
+                $ispoweron={isPowerOn}
+                $ismobile={isMobile}
+                $logocolor={icon.color}
+              >
+                {activeIcon === index && isPowerOn ? icon.text : ""}
+              </IconTxtContainer>
             </React.Fragment>
           );
         })}
