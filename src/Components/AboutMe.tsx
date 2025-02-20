@@ -64,88 +64,23 @@ const AboutMeContainer = styled.div<styleType>`
   opacity: 0.9;
   animation: ${DarkToBright} 2s ease-in-out forwards;
 `;
-const oFFflicker = keyframes`
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0.4;
-  }
-  35% {
-    opacity: 0.7;
-  }
-  45% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  65% {
-    opacity: 0.6;
-  }
-  75% {
-    opacity: 0.9;
-  }
-  90% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 1;
-  }`;
-const flickerToYellow = keyframes`
-  0% {
-    filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red) drop-shadow(0 0 15px red);
-    opacity: 1;
-  }
-  20% {
-    opacity: 0.4;
-  }
-  35% {
-    opacity: 0.7;
-  }
-  45% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
 
-  }
-  65% {
-    opacity: 0.6;
-
-  }
-  75% {
-    opacity: 0.8;
-
-  }
-  80% {
-    opacity: 0.6;
-
-  }
-  95%{
-    opacity: 0.9;
-  }
-  100% {
-    filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow) drop-shadow(0 0 15px yellow);
-    stroke: yellow;
-    opacity: 1;
-  }`;
-const OffSwitchSvg = styled(motion.svg)<styleType>`
-  width: ${(props) => (props.$ismobile ? "35px" : "50px")};
-  height: ${(props) => (props.$ismobile ? "35px" : "50px")};
-  cursor: pointer;
-  filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)
-    drop-shadow(0 0 15px red);
-  animation: ${oFFflicker} 1.2s infinite;
-`;
-const OnSwitchSvg = styled(motion.svg)<styleType>`
-  width: ${(props) => (props.$ismobile ? "35px" : "50px")};
-  height: ${(props) => (props.$ismobile ? "35px" : "50px")};
-  cursor: pointer;
-  filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow)
-    drop-shadow(0 0 15px yellow);
-  animation: ${flickerToYellow} 2s ease-in-out forwards;
-`;
+// const OffSwitchSvg = styled(motion.svg)<styleType>`
+//   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
+//   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
+//   cursor: pointer;
+//   filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)
+//     drop-shadow(0 0 15px red);
+//   animation: ${oFFflicker} 1.2s infinite;
+// `;
+// const OnSwitchSvg = styled(motion.svg)<styleType>`
+//   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
+//   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
+//   cursor: pointer;
+//   filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow)
+//     drop-shadow(0 0 15px yellow);
+//   animation: ${flickerToYellow} 2s ease-in-out forwards;
+// `;
 const GameScreen = styled.div<styleType>`
   display: flex;
   flex-direction: ${(props) => (props.$ismobile ? "column" : "row")};
@@ -272,45 +207,6 @@ function AboutMe() {
       <ControlPanel>
         <Button $ispoweron={isPowerOn} onClick={onclickPowerBtn}></Button>
       </ControlPanel>
-
-      {/* {isPowerOn ? (
-        <>
-          <OnSwitchSvg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="blacks"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="red"
-            onClick={onclickPowerBtn}
-            $ismobile={isMobile}
-            $ispoweron={isPowerOn}
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
-            />
-          </OnSwitchSvg>
-          <Info></Info>
-        </>
-      ) : (
-        <OffSwitchSvg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="black"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="red"
-          onClick={onclickPowerBtn}
-          $ismobile={isMobile}
-          $ispoweron={isPowerOn}
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M11.412 15.655 9.75 21.75l3.745-4.012M9.257 13.5H3.75l2.659-2.849m2.048-2.194L14.25 2.25 12 10.5h8.25l-4.707 5.043M8.457 8.457 3 3m5.457 5.457 7.086 7.086m0 0L21 21"
-          />
-        </OffSwitchSvg>
-      )} */}
     </AboutMeContainer>
   );
 }
