@@ -65,22 +65,6 @@ const AboutMeContainer = styled.div<styleType>`
   animation: ${DarkToBright} 2s ease-in-out forwards;
 `;
 
-// const OffSwitchSvg = styled(motion.svg)<styleType>`
-//   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
-//   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
-//   cursor: pointer;
-//   filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)
-//     drop-shadow(0 0 15px red);
-//   animation: ${oFFflicker} 1.2s infinite;
-// `;
-// const OnSwitchSvg = styled(motion.svg)<styleType>`
-//   width: ${(props) => (props.$ismobile ? "35px" : "50px")};
-//   height: ${(props) => (props.$ismobile ? "35px" : "50px")};
-//   cursor: pointer;
-//   filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow)
-//     drop-shadow(0 0 15px yellow);
-//   animation: ${flickerToYellow} 2s ease-in-out forwards;
-// `;
 const GameScreen = styled.div<styleType>`
   display: flex;
   flex-direction: ${(props) => (props.$ismobile ? "column" : "row")};
@@ -121,10 +105,29 @@ const MyImg = styled.img<styleType>`
   height: ${(props) => (props.$ismobile ? "164px" : "205px")};
 `;
 
+const muscleManShaking = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg); 
+  }
+  50% {
+    transform: rotate(-20deg); 
+  }
+  75% {
+    transform: rotate(20deg); 
+  }
+  100% {
+    transform: rotate(0deg); /* 원래 각도로 돌아옴 */
+  }
+`;
+
 const MuscleImg = styled.img<styleType>`
   width: ${(props) => (props.$ismobile ? "2%" : "245px")};
   filter: drop-shadow(0 0 1px yellow) drop-shadow(0 0 5px yellow)
     drop-shadow(0 0 7px yellow);
+  animation: ${muscleManShaking} 1s ease-in-out infinite;
 `;
 const TxtContatiner = styled.div<styleType>`
   display: flex;
