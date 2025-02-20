@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
-import mobile from "../Assets/Image/mobile.png";
-import pc from "../Assets/Image/pc.png";
+import mobile from "../Assets/Image/Png/mobile.png";
+import pc from "../Assets/Image/Png/pc.png";
 import React from "react";
 interface styleType {
   $ismobile?: boolean;
@@ -19,7 +19,7 @@ const SkillsContainer = styled.div<styleType>`
   width: 100%;
   height: 100vh;
   padding-top: ${(props) => (props.$ismobile ? "90px" : "120px")};
-  display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   background-image: ${(props) =>
@@ -114,13 +114,14 @@ const OnSwitchSvg = styled(motion.svg)<styleType>`
 // ------------------------------------------
 
 const LogoContainer = styled.div<styleType>`
-  width: ${(props) => (props.$ismobile ? "350px" : "650px")};
-  height: ${(props) => (props.$ismobile ? "350px" : "650px")};
+  width: ${(props) => (props.$ismobile ? "350px" : "500px")};
+  height: ${(props) => (props.$ismobile ? "350px" : "500px")};
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   position: relative;
+  /* background-color: blue; */
 `;
 
 const Icon = styled.img<styleType>`
@@ -143,14 +144,68 @@ const Icon = styled.img<styleType>`
 
 const IconTxtContainer = styled.div<styleType>`
   position: absolute;
-  top: ${(props) => (props.$ismobile ? "220px" : "400px")};
+  top: ${(props) => (props.$ismobile ? "220px" : "300px")};
   text-align: center;
   color: white;
-  font-size: ${(props) => (props.$ismobile ? "8px" : "15px")};
+  font-size: ${(props) => (props.$ismobile ? "8px" : "13px")};
   text-shadow: ${(
     props
   ) => `0 0 1px , 0 0 7px ${props.$logocolor}, 0 0 10px ${props.$logocolor},
     0 0 5px ${props.$logocolor}, 0 0 33px ${props.$logocolor}, 0 0 0px ${props.$logocolor}, 0 0 0px ${props.$logocolor}`};
+`;
+
+const electricShock = keyframes`
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+const SpeechBubbleContainer = styled.div<styleType>`
+  width: ${(props) => (props.$ismobile ? "200px" : "400px")};
+  height: ${(props) => (props.$ismobile ? "40px" : "80px")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: ${(props) => (props.$ismobile ? "200px" : "180px")};
+  color: white;
+  border-radius: ${(props) => (props.$ismobile ? "5px" : "15px")};
+  border: ${(props) =>
+    props.$ismobile ? "0.8px solid white" : "2px solid white"};
+  font-size: ${(props) => (props.$ismobile ? "17px" : "30px")};
+  font-family: "Neon";
+  filter: drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb)
+    drop-shadow(0 0 10px #f148fb);
+  animation: ${electricShock} 1s infinite;
 `;
 
 function Skills() {
@@ -160,8 +215,8 @@ function Skills() {
 
   const icons = [
     {
-      src: "src/Assets/Image/ts.png",
-      size: isMobile ? 40 : 100,
+      src: "src/Assets/Image/Png/ts.png",
+      size: isMobile ? 40 : 90,
       color: "#2D79C7",
       text: (
         <>
@@ -171,8 +226,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/js.png",
-      size: isMobile ? 40 : 100,
+      src: "src/Assets/Image/Png/js.png",
+      size: isMobile ? 40 : 90,
       color: "#FED600",
       text: (
         <>
@@ -182,8 +237,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/css.png",
-      size: isMobile ? 42 : 110,
+      src: "src/Assets/Image/Png/css.png",
+      size: isMobile ? 42 : 100,
       color: "#009BE5",
       text: (
         <>
@@ -193,8 +248,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/html.png",
-      size: isMobile ? 40 : 110,
+      src: "src/Assets/Image/Png/html.png",
+      size: isMobile ? 40 : 100,
       color: "#E93E2F",
       text: (
         <>
@@ -204,8 +259,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/react.png",
-      size: isMobile ? 40 : 110,
+      src: "src/Assets/Image/Png/react.png",
+      size: isMobile ? 40 : 100,
       color: "#0081a3",
       text: (
         <>
@@ -217,8 +272,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/styled.png",
-      size: isMobile ? 40 : 100,
+      src: "src/Assets/Image/Png/styled.png",
+      size: isMobile ? 40 : 90,
       color: "#DB7093",
       text: (
         <>
@@ -231,8 +286,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/xcode.png",
-      size: isMobile ? 50 : 130,
+      src: "src/Assets/Image/Png/xcode.png",
+      size: isMobile ? 50 : 110,
       color: "#18A8ED",
       text: (
         <>
@@ -242,8 +297,8 @@ function Skills() {
       ),
     },
     {
-      src: "src/Assets/Image/reactquery.png",
-      size: isMobile ? 40 : 120,
+      src: "src/Assets/Image/Png/reactquery.png",
+      size: isMobile ? 40 : 100,
       color: "#FF4154",
       text: (
         <>
@@ -282,6 +337,10 @@ function Skills() {
 
   return (
     <SkillsContainer $ismobile={isMobile}>
+      <SpeechBubbleContainer $ismobile={isMobile}>
+        {isPowerOn ? "Click Logo Icon" : "Click Electric Icon"}
+      </SpeechBubbleContainer>
+
       <LogoContainer
         $ismobile={isMobile}
         $ispoweron={isPowerOn}
