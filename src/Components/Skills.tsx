@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/mobile.png";
 import pc from "../Assets/Image/pc.png";
+import React from "react";
 interface styleType {
   $ismobile?: boolean;
   $ispoweron?: boolean;
@@ -12,6 +13,7 @@ interface styleType {
   $size?: number;
   $logocolor?: string;
 }
+
 const SkillsContainer = styled.div<styleType>`
   display: flex;
   width: 100%;
@@ -67,6 +69,7 @@ const onFlicker = keyframes`
   }
   45% {
     opacity: 0.5;
+    filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red) drop-shadow(0 0 15px red)
   }
   50% {
     opacity: 0.8;
@@ -131,7 +134,22 @@ const Icon = styled.img<styleType>`
     props.$ispoweron
       ? `grayscale(0%) drop-shadow(0 0 5px ${props.$logocolor}) drop-shadow(0 0 10px ${props.$logocolor}) drop-shadow(0 0 15px ${props.$logocolor})`
       : `grayscale(100%) drop-shadow(0 0 0px ${props.$logocolor})`};
+
   transition: filter 2s ease-in-out;
+`;
+
+const IconTxtContainer = styled.div<styleType>`
+  position: absolute;
+  top: ${(props) => (props.$ismobile ? "220px" : "400px")};
+  text-align: center;
+  color: white;
+  font-size: ${(props) => (props.$ismobile ? "8px" : "15px")};
+  opacity: ${(props) => (props.$ispoweron ? 1 : 0)};
+
+  text-shadow: ${(
+    props
+  ) => `0 0 1px , 0 0 7px ${props.$logocolor}, 0 0 10px ${props.$logocolor},
+    0 0 5px ${props.$logocolor}, 0 0 33px ${props.$logocolor}, 0 0 0px ${props.$logocolor}, 0 0 0px ${props.$logocolor}`};
 `;
 
 function Skills() {
@@ -141,44 +159,97 @@ function Skills() {
 
   const icons = [
     {
-      src: "src/Assets/Image//ts.png",
+      src: "src/Assets/Image/ts.png",
       size: isMobile ? 40 : 100,
       color: "#2D79C7",
+      text: (
+        <>
+          타입 명시를 통한 에러 방지 <br />
+          가독성 향상
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/js.png",
       size: isMobile ? 40 : 100,
       color: "#FED600",
+      text: (
+        <>
+          Fetch를 통한 비동기 통신 <br />
+          json형태 데이터 가공 및 활용
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/css.png",
       size: isMobile ? 42 : 110,
       color: "#009BE5",
+      text: (
+        <>
+          Flexbox, Position을 통한 요소 배치 최적화 <br />
+          keyframe을 활용한 애니메이션, 반응형 웹 구현
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/html.png",
       size: isMobile ? 40 : 110,
       color: "#E93E2F",
+      text: (
+        <>
+          구조적인 웹 페이지를 구축 <br />
+          요소의 배치를 제어 및 UI 최적화
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/react.png",
       size: isMobile ? 40 : 110,
       color: "#0081a3",
+      text: (
+        <>
+          함수형 컴포넌트 지향 <br />
+          Hook을 통한 라이플사이클 관리 <br />
+          react, react-native를 이용한 웹,앱 개발 <br />
+          다양한 라이브러리 활용
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/styled.png",
       size: isMobile ? 40 : 100,
       color: "#DB7093",
+      text: (
+        <>
+          css-in-js
+          <br />
+          Props를 통한 조건부 스타일링
+          <br />
+          태그 없이 JSX 형식을 통한 가독성 향상
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/xcode.png",
       size: isMobile ? 50 : 130,
       color: "#18A8ED",
+      text: (
+        <>
+          라이브러리를 위한 IOS 권한 설정 <br />
+          기능 구현을 위한 IOS 권한 설정 및 환경 구성
+        </>
+      ),
     },
     {
       src: "src/Assets/Image/reactquery.png",
       size: isMobile ? 40 : 120,
       color: "#FF4154",
+      text: (
+        <>
+          서버 상태 관리 간소화 <br />
+          캐싱을 이용한 성능 향상
+        </>
+      ),
     },
   ];
   const [isPowerOn, setIsPowerOn] = useState<boolean>(false);
@@ -186,6 +257,7 @@ function Skills() {
   const [dimensions, setDimensions] = useState({ center: 0, radius: 200 });
   const onclickPowerBtn = () => {
     setIsPowerOn((prev) => !prev);
+    setActiveIcon(null);
   };
   const startingAngle = Math.PI / 8;
   useEffect(() => {
@@ -196,6 +268,15 @@ function Skills() {
       setDimensions({ center: center, radius: radius });
     }
   }, [isMobile]);
+  const [activeIcon, setActiveIcon] = useState<number | null>(null);
+
+  const onclickIcon = (index: number) => {
+    if (activeIcon === index) {
+      setActiveIcon(null);
+    } else {
+      setActiveIcon(index);
+    }
+  };
 
   return (
     <SkillsContainer $ismobile={isMobile}>
@@ -259,17 +340,28 @@ function Skills() {
             : dimensions.center +
               dimensions.radius * Math.cos(angle) -
               icon.size / 2; // X축 계산
-
           return (
-            <Icon
-              key={index}
-              src={icon.src}
-              $top={top}
-              $left={left}
-              $size={icon.size}
-              $logocolor={icon.color}
-              $ispoweron={isPowerOn}
-            />
+            <React.Fragment key={index}>
+              <Icon
+                key={index}
+                src={icon.src}
+                $top={top}
+                $left={left}
+                $size={icon.size}
+                $logocolor={icon.color}
+                $ispoweron={isPowerOn}
+                onClick={() => onclickIcon(index)}
+              />
+              {activeIcon === index && (
+                <IconTxtContainer
+                  $ispoweron={isPowerOn}
+                  $ismobile={isMobile}
+                  $logocolor={icon.color}
+                >
+                  {icon.text}
+                </IconTxtContainer>
+              )}
+            </React.Fragment>
           );
         })}
       </LogoContainer>
