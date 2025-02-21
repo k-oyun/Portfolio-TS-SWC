@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import SkillsTest from "../Components/SkillsTest";
+import AboutMeTest from "../Components/AboutMeTest";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -19,9 +20,10 @@ function King() {
   return (
     <MainContainer>
       <Header />
-      <AboutMe />
-      <Skills />
-      <SkillsTest />
+      {/* <AboutMe /> */}
+      <AboutMeTest />
+      {/* <Skills /> */}
+      {/* <SkillsTest /> */}
     </MainContainer>
   );
 }
