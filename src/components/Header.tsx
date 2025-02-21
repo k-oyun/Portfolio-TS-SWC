@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 
@@ -10,6 +10,10 @@ interface styleType {
   $iscontact?: boolean;
 }
 
+interface HeaderProps {
+  onAboutMeClick: () => void;
+  onSkillsClick: () => void;
+}
 const HeaderNav = styled.nav<styleType>`
   display: flex;
   align-items: center;
@@ -88,7 +92,7 @@ const HeaderList = styled.li<styleType>`
   }
 `;
 
-function Header() {
+const Header: React.FC<HeaderProps> = ({ onAboutMeClick, onSkillsClick }) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
@@ -139,12 +143,9 @@ function Header() {
       isProjects: false,
     }));
   };
+  //=========================================================
 
-  const scrollMove = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  //=========================================================
 
   return (
     <HeaderNav $ismobile={isMobile}>
@@ -153,6 +154,7 @@ function Header() {
         $isaboutme={headerState.isAboutMe}
         onClick={() => {
           onclickAboutMe();
+          onAboutMeClick();
         }}
       >
         About Me
@@ -162,6 +164,7 @@ function Header() {
         $isskills={headerState.isSkills}
         onClick={() => {
           onclickSkills();
+          onSkillsClick();
         }}
       >
         Skills
@@ -182,6 +185,6 @@ function Header() {
       </HeaderList>
     </HeaderNav>
   );
-}
+};
 
 export default Header;

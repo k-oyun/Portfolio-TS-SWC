@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
@@ -339,7 +339,7 @@ const IconTxtContainer = styled.p<styleType>`
     0 0 33px #00ffff, 0 0 0px #00ffff, 0 0 0px #00ffff;
 `;
 
-function Skills() {
+const Skills = forwardRef<HTMLDivElement, any>((props, ref) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
@@ -433,7 +433,7 @@ function Skills() {
     }
   };
   return (
-    <SkillsContainer $ismobile={isMobile}>
+    <SkillsContainer ref={ref} $ismobile={isMobile}>
       <LogoContainer
         $ismobile={isMobile}
         $ispoweron={isPowerOn}
@@ -590,6 +590,6 @@ function Skills() {
       </LogoContainer>
     </SkillsContainer>
   );
-}
+});
 
 export default Skills;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
@@ -175,13 +175,13 @@ const SpeechBubbleContainer = styled.div<styleType>`
     drop-shadow(0 0 10px #f148fb);
   animation: ${electricShock} 1s infinite;
 `;
-function AboutMe() {
+const AboutMeTest = forwardRef<HTMLDivElement, any>((props, ref) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
 
   return (
-    <AboutMeContainer $ismobile={isMobile}>
+    <AboutMeContainer ref={ref} $ismobile={isMobile}>
       <BannerContainer $ismobile={isMobile}>
         <SpeechBubbleContainer $ismobile={isMobile}>
           Welcome to Oyun's Portfolio
@@ -213,6 +213,6 @@ function AboutMe() {
       </TxtContatiner>
     </AboutMeContainer>
   );
-}
+});
 
-export default AboutMe;
+export default AboutMeTest;

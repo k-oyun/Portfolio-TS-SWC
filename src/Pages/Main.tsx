@@ -4,6 +4,7 @@ import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import SkillsTest from "../Components/SkillsTest";
 import AboutMeTest from "../Components/AboutMeTest";
+import { useRef } from "react";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -17,13 +18,28 @@ const MainContainer = styled.div`
   scroll-snap-type: y mandatory;
 `;
 function King() {
+  const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const skillsRef = useRef<HTMLDivElement | null>(null);
+
+  const ScrollMove = (sectionRef: React.RefObject<HTMLDivElement | null>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: "smooth", // 부드럽게 스크롤
+        block: "start", // 시작 부분으로 스크롤
+      });
+    }
+  };
+
   return (
     <MainContainer>
-      <Header />
+      <Header
+        onAboutMeClick={() => ScrollMove(aboutMeRef)}
+        onSkillsClick={() => ScrollMove(skillsRef)}
+      />
+      <AboutMeTest ref={aboutMeRef} />
+      <SkillsTest ref={skillsRef} />
       {/* <AboutMe /> */}
-      <AboutMeTest />
       {/* <Skills /> */}
-      <SkillsTest />
     </MainContainer>
   );
 }
