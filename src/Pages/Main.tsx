@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
+import SkillsTest from "../Components/SkillsTest";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -20,6 +21,7 @@ function King() {
       <Header />
       <AboutMe />
       <Skills />
+      <SkillsTest />
     </MainContainer>
   );
 }
