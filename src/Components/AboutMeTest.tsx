@@ -110,7 +110,7 @@ const TxtContatiner = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props) => (props.$ismobile ? "500px" : "500px")};
+  width: ${(props) => (props.$ismobile ? "300px" : "500px")};
   height: 300px;
   color: white;
   margin-top: ${(props) => (props.$ismobile ? "0" : "30px")};

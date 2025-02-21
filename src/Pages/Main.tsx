@@ -23,7 +23,7 @@ function King() {
       {/* <AboutMe /> */}
       <AboutMeTest />
       {/* <Skills /> */}
-      {/* <SkillsTest /> */}
+      <SkillsTest />
     </MainContainer>
   );
 }
