@@ -13,6 +13,7 @@ interface styleType {
 interface HeaderProps {
   onAboutMeClick: () => void;
   onSkillsClick: () => void;
+  onProjectsClick: () => void;
 }
 const HeaderNav = styled.nav<styleType>`
   display: flex;
@@ -92,7 +93,11 @@ const HeaderList = styled.li<styleType>`
   }
 `;
 
-const Header: React.FC<HeaderProps> = ({ onAboutMeClick, onSkillsClick }) => {
+const Header: React.FC<HeaderProps> = ({
+  onAboutMeClick,
+  onSkillsClick,
+  onProjectsClick,
+}) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
@@ -172,7 +177,10 @@ const Header: React.FC<HeaderProps> = ({ onAboutMeClick, onSkillsClick }) => {
       <HeaderList
         $ismobile={isMobile}
         $isprojects={headerState.isProjects}
-        onClick={onclickProjects}
+        onClick={() => {
+          onclickProjects();
+          onProjectsClick();
+        }}
       >
         Projects
       </HeaderList>

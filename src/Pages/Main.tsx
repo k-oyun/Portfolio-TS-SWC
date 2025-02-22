@@ -5,6 +5,7 @@ import Skills from "../Components/Skills";
 import SkillsTest from "../Components/SkillsTest";
 import AboutMeTest from "../Components/AboutMeTest";
 import { useRef } from "react";
+import Projects from "../Components/\bProjects";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -20,6 +21,7 @@ const MainContainer = styled.div`
 function King() {
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
 
   const ScrollMove = (sectionRef: React.RefObject<HTMLDivElement | null>) => {
     if (sectionRef.current) {
@@ -35,9 +37,11 @@ function King() {
       <Header
         onAboutMeClick={() => ScrollMove(aboutMeRef)}
         onSkillsClick={() => ScrollMove(skillsRef)}
+        onProjectsClick={() => ScrollMove(projectsRef)}
       />
       <AboutMeTest ref={aboutMeRef} />
       <SkillsTest ref={skillsRef} />
+      <Projects ref={projectsRef} />
       {/* <AboutMe /> */}
       {/* <Skills /> */}
     </MainContainer>
