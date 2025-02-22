@@ -315,7 +315,6 @@ const IconTxtContainer = styled.p<styleType>`
   height: 20px;
   padding-top: ${(props) => (props.$ismobile ? "80px" : "0px")};
   padding-bottom: ${(props) => (props.$ismobile ? "120px" : "70px")};
-  white-space: pre-line;
   font-size: ${(props) => (props.$ismobile ? "10px" : "20px")};
   white-space: nowrap;
   text-shadow: 0 0 1px, 0 0 7px #00ffff, 0 0 10px #00ffff, 0 0 5px #00ffff,
