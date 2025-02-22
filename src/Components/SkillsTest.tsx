@@ -131,22 +131,7 @@ const IconContainer = styled.div<styleType>`
   /* background-color: green; */
 `;
 //------------------------------------------------------------
-const logoShake = keyframes`0% {
-  transform: translateX(0);
-}
-25% {
-  transform: translateX(-5px);
-}
-50% {
-  transform: translateX(5px);
-}
-75% {
-  transform: translateX(-5px);
-}
-100% {
-  transform: translateX(0);
-}
-`;
+
 const HTMLSvg = styled.svg<styleType>`
   stroke: ${(props) => (props.$ispoweron ? "white" : "grey")};
   fill: none;
@@ -255,7 +240,6 @@ const StyledCompSvg = styled.svg<styleType>`
     filter 2s ease-in-out;
   &:hover {
     ${({ $ispoweron }) => $ispoweron && `transform: scale(1.1);`}
-    animation: ${logoShake} 0.3s ease-in-out;
   }
 `;
 
@@ -272,7 +256,6 @@ const XcodeSvg = styled.svg<styleType>`
     filter 2s ease-in-out;
   &:hover {
     ${({ $ispoweron }) => $ispoweron && `transform: scale(1.1);`}
-    animation: ${logoShake} 0.3s ease-in-out;
   }
 `;
 const electricShock = keyframes`
