@@ -145,7 +145,7 @@ const Modal = styled.div<styleType>`
   align-items: center;
   position: absolute;
   background-color: black;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   padding-bottom: 30px;
   font-family: "Neon";
@@ -163,7 +163,7 @@ const ModalScreen = styled.div<styleType>`
   width: ${(props) => (props.$ismobile ? "290px" : "650px")};
   height: ${(props) => (props.$ismobile ? "550px" : "325px")};
   background-position: center;
-  margin-top: 100px;
+  margin-top: 50px;
   background-size: cover;
   border-radius: 15px;
   box-shadow: 0 0 15px white;
@@ -214,7 +214,7 @@ const ModalCloseBtn = styled.button`
   z-index: 100;
   cursor: pointer;
   right: 30px;
-  top: 100px;
+  top: 50px;
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
     0 0 0px red, 0 0 0px red;
   animation: ${ModalCloseBtnAnimation} 1s ease-in-out infinite;
