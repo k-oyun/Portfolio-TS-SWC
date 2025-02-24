@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
 import pc from "../Assets/Image/png/pc.png";
-import myPic from "../Assets/png/Image/mabro.jpg";
+import myPic from "../Assets/Image/png/mabro.jpg";
 import musclesmall from "../Assets/Image/Png/muslcesmall.png";
 
 interface styleType {
@@ -64,20 +64,12 @@ const AboutMeContainer = styled.div<styleType>`
 const BannerContainer = styled.div<styleType>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: ${(props) => (props.$ismobile ? "220px" : "500px")};
-  height: ${(props) => (props.$ismobile ? "290px" : "300px")};
+  height: ${(props) => (props.$ismobile ? "250px" : "320px")};
   transition: opacity 0.5s ease-in-out;
-  margin-top: ${(props) => (props.$ismobile ? "40px" : "100px")};
-  /* background-color: blue; */
-`;
-const MyImg = styled.img<styleType>`
-  /* 원래 사진 비율  */
-  /* width: 32px; */
-  /* height: 41px; */
-  width: ${(props) => (props.$ismobile ? "128px" : "160px")};
-  height: ${(props) => (props.$ismobile ? "164px" : "205px")};
+  margin-top: ${(props) => (props.$ismobile ? "100px" : "120px")};
+  /* background-color: red; */
 `;
 
 const muscleManShaking = keyframes`
@@ -99,27 +91,44 @@ const muscleManShaking = keyframes`
 `;
 
 const MuscleImg = styled.img<styleType>`
-  width: ${(props) => (props.$ismobile ? "130px" : "210px")};
+  width: ${(props) => (props.$ismobile ? "95px" : "190px")};
   filter: drop-shadow(0 0 1px yellow) drop-shadow(0 0 5px yellow)
     drop-shadow(0 0 7px yellow);
   animation: ${muscleManShaking} 1s ease-in-out infinite;
   padding-top: 30px;
-  /* background-color: blue; */
+`;
+
+const BannerImgContainer = styled.div<styleType>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: ${(props) => (props.$ismobile ? "200px" : "400px")};
+  height: ${(props) => (props.$ismobile ? "100px" : "235px")};
+  margin-top: ${(props) => (props.$ismobile ? "30px" : "0px")};
+`;
+
+const MyImg = styled.img<styleType>`
+  /* 원래 사진 비율  */
+  /* width: 32px; */
+  /* height: 41px; */
+  width: ${(props) => (props.$ismobile ? "64px" : "128px")};
+  height: ${(props) => (props.$ismobile ? "82px" : "164px")};
+  margin-top: ${(props) => (props.$ismobile ? "20px" : "0px")};
+  border-radius: 15px;
+  filter: drop-shadow(0 0 5px grey) drop-shadow(0 0 5px grey)
+    drop-shadow(0 0 5px grey);
 `;
 const TxtContatiner = styled.div<styleType>`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: ${(props) => (props.$ismobile ? "300px" : "500px")};
-  height: 300px;
   color: white;
-  margin-top: ${(props) => (props.$ismobile ? "0" : "30px")};
   font-size: ${(props) => (props.$ismobile ? "0.6rem" : "1rem")};
-  line-height: ${(props) => (props.$ismobile ? "11px" : "21px")};
+  line-height: ${(props) => (props.$ismobile ? "15px" : "21px")};
   text-shadow: 0 0 2px #00aa00, 0 0 7px #00aa00, 0 0 17px #00aa00,
-    0 0 27px #00aa00, 0 0 37px #00aa00, 0 0 52px #00aa00, 0 0 72px #00aa00;
+    0 0 27px #00aa00, 0 0 10px #00aa00, 0 0 52px #00aa00, 0 0 72px #00aa00;
   transition: opacity 0.5s ease-in-out;
-  /* background-color: red; */
 `;
 
 const electricShock = keyframes`
@@ -163,8 +172,6 @@ const SpeechBubbleContainer = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  /* margin-bottom: 10px; */
   color: white;
   border-radius: ${(props) => (props.$ismobile ? "5px" : "15px")};
   border: ${(props) =>
@@ -186,7 +193,10 @@ const AboutMeTest = forwardRef<HTMLDivElement, any>((props, ref) => {
         <SpeechBubbleContainer $ismobile={isMobile}>
           Welcome to Oyun's Portfolio
         </SpeechBubbleContainer>
-        <MuscleImg src={musclesmall} $ismobile={isMobile}></MuscleImg>
+        <BannerImgContainer $ismobile={isMobile}>
+          <MyImg src={myPic} $ismobile={isMobile} />
+          <MuscleImg src={musclesmall} $ismobile={isMobile}></MuscleImg>
+        </BannerImgContainer>
       </BannerContainer>
       <TxtContatiner $ismobile={isMobile}>
         근육같은 개발자 권오윤
