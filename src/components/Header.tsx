@@ -69,7 +69,6 @@ const HeaderList = styled.li<styleType>`
   padding-right: ${(props) => (props.$ismobile ? "25px" : "50px")};
   /* margin: ${(props) => (props.$ismobile ? "0 20px" : "0 100px")}; */
   font-size: ${(props) => (props.$ismobile ? "0.75rem" : "1.7rem")};
-
   color: #fff;
   /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
     0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080; */
@@ -90,7 +89,9 @@ const HeaderList = styled.li<styleType>`
   &:hover {
     animation: ${brokenNeon} 1.2s ease-in-out,
       ${fiXedNeon} 1.2s ease-in-out 1.2s forwards;
+    transform: scale(1.05);
   }
+  transition: transform 0.2s ease-in-out;
 `;
 
 const Header: React.FC<HeaderProps> = ({
