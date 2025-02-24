@@ -155,7 +155,7 @@ const ModalContainer = styled.div<styleType>`
 `;
 
 const Modal = styled.div<styleType>`
-  width: 100%;
+  width: ${(props) => (props.$ismobile ? "100%" : "100%")};
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -177,8 +177,8 @@ const ModalScreen = styled.div<styleType>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(props) => (props.$ismobile ? "290px" : "650px")};
-  height: ${(props) => (props.$ismobile ? "550px" : "325px")};
+  width: ${(props) => (props.$ismobile ? "250px" : "650px")};
+  height: ${(props) => (props.$ismobile ? "140px" : "325px")};
   background-position: center;
   margin-top: 50px;
   background-size: cover;
@@ -189,8 +189,8 @@ const ModalScreen = styled.div<styleType>`
   transition: box-shadow 0.5s ease-in-out, border 0.5s ease;
 `;
 
-const ModalTxtContainer = styled.div`
-  width: 950px;
+const ModalTxtContainer = styled.div<styleType>`
+  width: ${(props) => (props.$ismobile ? "250px" : "950px")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -219,30 +219,31 @@ const ModalCloseBtnAnimation = keyframes`
       filter: brightness(1); 
   }`;
 
-const ModalCloseBtn = styled.button`
+const ModalCloseBtn = styled.button<styleType>`
   position: absolute;
   /* background-color: red; */
-  font-size: 50px;
+  font-size: ${(props) => (props.$ismobile ? "30px" : "50px")};
   font-family: "Neon";
   color: white;
   background-color: transparent;
   border: none;
   z-index: 100;
   cursor: pointer;
-  right: 30px;
-  top: 50px;
+  right: ${(props) => (props.$ismobile ? "5px" : "30px")};
+  top: ${(props) => (props.$ismobile ? "10px" : "30px")};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
     0 0 0px red, 0 0 0px red;
   animation: ${ModalCloseBtnAnimation} 1s ease-in-out infinite;
 `;
 
 const ModalMainTitle = styled.span<styleType>`
-  font-size: 30px;
-  margin: 20px 0px;
+  font-size: ${(props) => (props.$ismobile ? "15px" : "30px")};
+  margin: ${(props) => (props.$ismobile ? "5px 0" : "20px 0")};
   text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
 `;
 const ModalContent = styled.span<styleType>`
+  font-size: ${(props) => (props.$ismobile ? "8px" : "16px")};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
 `;
@@ -376,40 +377,56 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   return (
     <>
       {selectedProject !== null ? (
-        <ModalContainer $ismodalon={isModalOn}>
-          <Modal $ismodalon={isModalOn}>
-            <ModalScreen />
+        <ModalContainer $ismodalon={isModalOn} $ismobile={isMobile}>
+          <Modal $ismodalon={isModalOn} $ismobile={isMobile}>
+            <ModalScreen $ismobile={isMobile} />
             <ModalCloseBtn
+              $ismobile={isMobile}
               onClick={() => {
                 setIsModalOn(false);
               }}
             >
               x
             </ModalCloseBtn>
-            <ModalTxtContainer>
-              <ModalMainTitle>Part</ModalMainTitle>
+            <ModalTxtContainer $ismobile={isMobile}>
+              <ModalMainTitle $ismobile={isMobile}>Part</ModalMainTitle>
               {projectsDetail[selectedProject].part.map((part, partIndex) => (
-                <ModalContent key={partIndex}>{part}</ModalContent>
+                <ModalContent key={partIndex} $ismobile={isMobile}>
+                  {part}
+                </ModalContent>
               ))}
-              <ModalMainTitle>What did I do</ModalMainTitle>
+              <ModalMainTitle $ismobile={isMobile}>
+                What did I do
+              </ModalMainTitle>
               {projectsDetail[selectedProject].task.map((task, taskIndex) => (
-                <ModalContent key={taskIndex}>{task}</ModalContent>
+                <ModalContent key={taskIndex} $ismobile={isMobile}>
+                  {task}
+                </ModalContent>
               ))}
 
-              <ModalMainTitle>Trouble Shooting</ModalMainTitle>
+              <ModalMainTitle $ismobile={isMobile}>
+                Trouble Shooting
+              </ModalMainTitle>
               {projectsDetail[selectedProject].trouble.map(
                 (trouble, troubleIndex) => (
-                  <ModalContent key={troubleIndex}>{trouble}</ModalContent>
+                  <ModalContent key={troubleIndex} $ismobile={isMobile}>
+                    {trouble}
+                  </ModalContent>
                 )
               )}
-              <ModalMainTitle>What did I feel</ModalMainTitle>
+              <ModalMainTitle $ismobile={isMobile}>
+                What did I feel
+              </ModalMainTitle>
               {projectsDetail[selectedProject].feeling.map(
                 (feeling, feelingIndex) => (
-                  <ModalContent key={feelingIndex}>{feeling}</ModalContent>
+                  <ModalContent key={feelingIndex} $ismobile={isMobile}>
+                    {feeling}
+                  </ModalContent>
                 )
               )}
-              <ModalMainTitle>Link</ModalMainTitle>
+              <ModalMainTitle $ismobile={isMobile}>Link</ModalMainTitle>
               <ModalContent
+                $ismobile={isMobile}
                 onClick={() =>
                   window.open(projectsDetail[selectedProject].link)
                 }
