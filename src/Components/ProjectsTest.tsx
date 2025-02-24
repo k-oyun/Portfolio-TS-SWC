@@ -137,9 +137,26 @@ const NextBtn = styled(motion.svg)<styleType>`
   }
 `;
 
+const ModalWrapper = styled.div<styleType>`
+  display: ${(props) => (props.$ismodalon ? "flex" : "none")};
+  visibility: ${(props) => (props.$ismodalon ? "visible" : "hidden")};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* 전체 모달에서 스크롤 가능 */
+  /* background-color: red; */
+  z-index: 300;
+  padding: 20px;
+`;
+
 const Modal = styled.div<styleType>`
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,7 +194,6 @@ const ModalTxtContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   margin-top: 30px;
 `;
 
@@ -353,48 +369,56 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
     },
   ];
 
+  // useEffect(() => {
+  //   console.log(isModalOn);
+  // }, [isModalOn]);
+
   return (
     <>
       {selectedProject !== null ? (
-        <Modal $ismodalon={isModalOn}>
-          <ModalScreen />
-          <ModalCloseBtn
-            onClick={() => {
-              setIsModalOn(false);
-            }}
-          >
-            x
-          </ModalCloseBtn>
-          <ModalTxtContainer>
-            <ModalMainTitle>Part</ModalMainTitle>
-            {projectsDetail[selectedProject].part.map((part, partIndex) => (
-              <ModalContent key={partIndex}>{part}</ModalContent>
-            ))}
-            <ModalMainTitle>What did I do</ModalMainTitle>
-            {projectsDetail[selectedProject].task.map((task, taskIndex) => (
-              <ModalContent key={taskIndex}>{task}</ModalContent>
-            ))}
-
-            <ModalMainTitle>Trouble Shooting</ModalMainTitle>
-            {projectsDetail[selectedProject].trouble.map(
-              (trouble, troubleIndex) => (
-                <ModalContent key={troubleIndex}>{trouble}</ModalContent>
-              )
-            )}
-            <ModalMainTitle>What did I feel</ModalMainTitle>
-            {projectsDetail[selectedProject].feeling.map(
-              (feeling, feelingIndex) => (
-                <ModalContent key={feelingIndex}>{feeling}</ModalContent>
-              )
-            )}
-            <ModalMainTitle>Link</ModalMainTitle>
-            <ModalContent
-              onClick={() => window.open(projectsDetail[selectedProject].link)}
+        <ModalWrapper $ismodalon={isModalOn}>
+          <Modal $ismodalon={isModalOn}>
+            <ModalScreen />
+            <ModalCloseBtn
+              onClick={() => {
+                setIsModalOn(false);
+              }}
             >
-              ㆍ {projectsDetail[selectedProject].link}
-            </ModalContent>
-          </ModalTxtContainer>
-        </Modal>
+              x
+            </ModalCloseBtn>
+            <ModalTxtContainer>
+              <ModalMainTitle>Part</ModalMainTitle>
+              {projectsDetail[selectedProject].part.map((part, partIndex) => (
+                <ModalContent key={partIndex}>{part}</ModalContent>
+              ))}
+              <ModalMainTitle>What did I do</ModalMainTitle>
+              {projectsDetail[selectedProject].task.map((task, taskIndex) => (
+                <ModalContent key={taskIndex}>{task}</ModalContent>
+              ))}
+
+              <ModalMainTitle>Trouble Shooting</ModalMainTitle>
+              {projectsDetail[selectedProject].trouble.map(
+                (trouble, troubleIndex) => (
+                  <ModalContent key={troubleIndex}>{trouble}</ModalContent>
+                )
+              )}
+              <ModalMainTitle>What did I feel</ModalMainTitle>
+              {projectsDetail[selectedProject].feeling.map(
+                (feeling, feelingIndex) => (
+                  <ModalContent key={feelingIndex}>{feeling}</ModalContent>
+                )
+              )}
+              <ModalMainTitle>Link</ModalMainTitle>
+              <ModalContent
+                onClick={() =>
+                  window.open(projectsDetail[selectedProject].link)
+                }
+              >
+                ㆍ {projectsDetail[selectedProject].link}
+              </ModalContent>
+            </ModalTxtContainer>
+          </Modal>
+        </ModalWrapper>
       ) : null}
       <ProjectsContainer ref={ref} $ismodalon={isModalOn}>
         <GameScreenContainer>
