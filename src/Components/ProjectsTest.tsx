@@ -137,7 +137,7 @@ const NextBtn = styled(motion.svg)<styleType>`
   }
 `;
 
-const ModalWrapper = styled.div<styleType>`
+const ModalContainer = styled.div<styleType>`
   display: ${(props) => (props.$ismodalon ? "flex" : "none")};
   visibility: ${(props) => (props.$ismodalon ? "visible" : "hidden")};
   position: fixed;
@@ -376,7 +376,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   return (
     <>
       {selectedProject !== null ? (
-        <ModalWrapper $ismodalon={isModalOn}>
+        <ModalContainer $ismodalon={isModalOn}>
           <Modal $ismodalon={isModalOn}>
             <ModalScreen />
             <ModalCloseBtn
@@ -418,7 +418,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
               </ModalContent>
             </ModalTxtContainer>
           </Modal>
-        </ModalWrapper>
+        </ModalContainer>
       ) : null}
       <ProjectsContainer ref={ref} $ismodalon={isModalOn}>
         <GameScreenContainer>
