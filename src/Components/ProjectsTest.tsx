@@ -1,10 +1,13 @@
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useState } from "react";
 import { keyframes, styled } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
 import pc from "../Assets/Image/Png/pc.png";
-import mindBook from "../Assets/Image/Png/mind_book.png";
-import waither from "../Assets/Image/Png/waither.png";
-import defloy from "../Assets/Image/Png/defloy.png";
+import mindBookPc from "../Assets/Image/Png/mindBookPc.png";
+import mindBookMobile from "../Assets/Image/Png/mindBookMobile.png";
+import waitherPc from "../Assets/Image/Png/waitherPc.png";
+import waitherMobile from "../Assets/Image/Png/waitherMobile.png";
+import defloyPc from "../Assets/Image/Png/defloyPc.png";
+import defloyMobile from "../Assets/Image/Png/defloyMobile.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
@@ -67,7 +70,7 @@ const ProjectCard = styled.div<styleType>`
   align-items: flex-start;
   padding-top: ${(props) => (props.$ismobile ? "20px" : "25px")};
   padding-left: ${(props) => (props.$ismobile ? "30px" : "50px")};
-  /* opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)}; */
+  opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)};
   transition: opacity 1s ease-in-out;
   color: white;
 `;
@@ -284,7 +287,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       tech: isMobile
         ? "React Navite\nJavaScript, TypeScript\nReact-Query, Recoil, Styled-Components"
         : "React Navite, JavaScript, TypeScript, React-Query, Recoil, Styled-Components",
-      image: waither,
+      image: isMobile ? waitherMobile : waitherPc,
     },
     {
       id: 2,
@@ -296,7 +299,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       tech: isMobile
         ? "React\nJavaScript, TypeScript\nStyled-Components"
         : "React, JavaScript, TypeScript, Styled-Components",
-      image: defloy,
+      image: isMobile ? defloyMobile : defloyPc,
     },
     {
       id: 3,
@@ -306,7 +309,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         : "우울감, 무기력함, 불안감, 의욕 상실을 겪는 현대인들을 위해 자기 치유와 자존감 회복을 목적으로 제공된 웹서비스",
       period: "2024.07 ~ 2024.08",
       tech: isMobile ? "HTML\nCSS\nJavaScript" : "HTML, CSS, JavaScript",
-      image: mindBook,
+      image: isMobile ? mindBookMobile : mindBookPc,
     },
   ];
 
