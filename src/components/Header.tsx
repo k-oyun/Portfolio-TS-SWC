@@ -67,7 +67,7 @@ const fiXedNeon = keyframes`
 const HeaderList = styled.li<styleType>`
   padding-left: ${(props) => (props.$ismobile ? "21px" : "50px")};
   padding-right: ${(props) => (props.$ismobile ? "25px" : "50px")};
-  font-size: ${(props) => (props.$ismobile ? "0.75rem" : "1.7rem")};
+  font-size: ${(props) => (props.$ismobile ? "16px" : "26px")};
   color: #fff;
   font-family: "Neon";
   white-space: nowrap;
