@@ -76,6 +76,42 @@ const DetailTxtAnimation = keyframes`
   100% {
     transform: translateX(0);
   }`;
+
+const electricShock = keyframes`
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 const ProjectsContainer = styled.div<styleType>`
   display: flex;
   flex-direction: column;
@@ -123,7 +159,7 @@ const ProjectCard = styled.div<styleType>`
   width: ${(props) => (props.$ismobile ? "290px" : "1200px")};
   height: ${(props) => (props.$ismobile ? "550px" : "600px")};
   background-color: black;
-  font-family: "Neon";
+  /* font-family: "Neon"; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -228,7 +264,7 @@ const Modal = styled.div<styleType>`
   z-index: 100;
   top: 0;
   padding-bottom: 30px;
-  font-family: "Neon";
+  /* font-family: "Neon"; */
   color: white;
   overflow-y: auto;
   visibility: ${(props) => (props.$ismodalon ? "visible" : "hidden")};
@@ -332,42 +368,17 @@ const ModalContent = styled.span<styleType>`
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
   white-space: pre-wrap;
+  line-height: 30px;
 `;
-const electricShock = keyframes`
-  0% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0.8;
-  }
-  20% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 0.8;
-  }
-  40% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  60% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.8;
-  }
-  80% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
+
+const ModalLinkContent = styled.span<styleType>`
+  font-size: ${(props) => (props.$ismobile ? "8px" : "16px")};
+  text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
+    0 0 0px red, 0 0 0px red;
+  cursor: pointer;
+  animation: ${electricShock} 1s infinite;
 `;
+
 const SpeechBubbleContainer = styled.div<styleType>`
   width: ${(props) => (props.$ismobile ? "210px" : "400px")};
   height: ${(props) => (props.$ismobile ? "20px" : "10px")};
@@ -385,6 +396,10 @@ const SpeechBubbleContainer = styled.div<styleType>`
       ? " drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)drop-shadow(0 0 10px red)"
       : " drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb) drop-shadow(0 0 10px #f148fb)"};
   animation: ${electricShock} 1s infinite;
+`;
+
+const AccentContent = styled.span`
+  color: blue;
 `;
 const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   const isMobile = useMediaQuery({
@@ -507,7 +522,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         "   ㆍ 해당 prop에 null 값이 전달되지 않도록 보장하여 NSNumber 에러가 발생하지 않도록 내장 함수 수정",
       ],
       feeling: [
-        "ㆍ 오래 알고 지냈던 친구들과 진행했던 프로젝트였기에 갈등 없이 프로젝트를 끝낼 수 있다고 생각했습니다. \n   프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 생기기 시작했고, 프로젝트가 중단되었습니다. \n   정이 많았던 프로젝트였기에 남아있는 부분들을 구현했습니다. \n   힘들었지만 의사소통과 팀원 간의 존중 및 배려가 중요하다고 한 번 더 배워갈 수 있었던 프로젝트였습니다.",
+        "ㆍ 오래 알고 지냈던 친구들과 진행했던 프로젝트였기에 갈등 없이 프로젝트를 끝낼 수 있다고 생각했습니다. \n   프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 생기기 시작했고, 프로젝트가 중단되었습니다. \n   정이 많았던 프로젝트였기에 끝까지 구현하고 싶어 남아있는 부분들을 구현했습니다. \n   힘들었지만 의사소통과 팀원 간의 존중 및 배려가 중요하다고 한 번 더 배워갈 수 있었던 프로젝트였습니다.",
         "\n",
         "ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, OS의 요구 사항에 맞춰 개발하는 과정에서 많은 시행착오와 학습이 필요했습니다.\n   플랫폼별 제약 사항을 고려하여 구현하는 데 어려움을 겪었지만, OS의 세부적인 부분까지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.",
       ],
@@ -630,14 +645,14 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
                 )
               )}
               <ModalMainTitle $ismobile={isMobile}>Link</ModalMainTitle>
-              <ModalContent
+              <ModalLinkContent
                 $ismobile={isMobile}
                 onClick={() =>
                   window.open(projectsDetail[selectedProject].link)
                 }
               >
                 ㆍ {projectsDetail[selectedProject].link}
-              </ModalContent>
+              </ModalLinkContent>
             </ModalTxtContainer>
           </Modal>
         </ModalContainer>
