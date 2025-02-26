@@ -672,7 +672,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
           </NextBtn>
         </ProjectScreenContainer>
         <SpeechBubbleContainer $ismobile={isMobile}>
-          Put Your Mouse On The Screen
+          {isMobile ? "Touch The Screen" : "Put Your Mouse On The Screen"}
         </SpeechBubbleContainer>
       </ProjectsContainer>
     </>
