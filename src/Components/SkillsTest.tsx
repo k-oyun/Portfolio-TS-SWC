@@ -294,7 +294,7 @@ const electricShock = keyframes`
   }
 `;
 const SpeechBubbleContainer = styled.div<styleType>`
-  width: ${(props) => (props.$ismobile ? "210px" : "430px")};
+  width: ${(props) => (props.$ismobile ? "210px" : "450px")};
   height: ${(props) => (props.$ismobile ? "40px" : "80px")};
   display: flex;
   justify-content: center;
@@ -425,7 +425,9 @@ const Skills = forwardRef<HTMLDivElement, any>((props, ref) => {
           {isPowerOn
             ? isMobile
               ? "Touch Logo Icon"
-              : "Put the Mouse on Logo"
+              : "Put Your Mouse on The Logo"
+            : isMobile
+            ? "Touch Electric Icon"
             : "Click Electric Icon"}
         </SpeechBubbleContainer>
         <IconContainer $ismobile={isMobile}>
