@@ -379,8 +379,10 @@ const SpeechBubbleContainer = styled.div<styleType>`
   margin-bottom: ${(props) => (props.$ismobile ? "15px" : "0px")};
 
   font-family: "Neon";
-  filter: drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb)
-    drop-shadow(0 0 10px #f148fb);
+  filter: ${(props) =>
+    props.$ismousehover
+      ? " drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)drop-shadow(0 0 10px red)"
+      : " drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb) drop-shadow(0 0 10px #f148fb)"};
   animation: ${electricShock} 1s infinite;
 `;
 const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
@@ -396,11 +398,9 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
 
   const onMouseScreenEnter = () => {
     setIsMouseHover(true);
-    console.log(isMouseHover);
   };
   const onMouseScreenLeave = () => {
     setIsMouseHover(false);
-    console.log(isMouseHover);
   };
 
   const onClickDetail = () => {
@@ -671,8 +671,17 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
             <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </NextBtn>
         </ProjectScreenContainer>
-        <SpeechBubbleContainer $ismobile={isMobile}>
-          {isMobile ? "Touch The Screen" : "Put Your Mouse On The Screen"}
+        <SpeechBubbleContainer
+          $ismobile={isMobile}
+          $ismousehover={isMouseHover}
+        >
+          {isMouseHover
+            ? isMobile
+              ? "Touch Detail"
+              : "Click Detail"
+            : isMobile
+            ? "Touch The Screen"
+            : "Put Your Mouse On The Screen"}
         </SpeechBubbleContainer>
       </ProjectsContainer>
     </>
