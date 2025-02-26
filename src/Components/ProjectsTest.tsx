@@ -331,6 +331,7 @@ const ModalContent = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "8px" : "16px")};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  white-space: pre-wrap;
 `;
 const electricShock = keyframes`
   0% {
@@ -468,9 +469,17 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         waitherSetting,
         waitherWindSetting,
       ],
-      part: [],
-      task: [
+      part: [
+        "[ 프론트엔드 ]",
         "ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",
+        "ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연결",
+        "ㆍ 바람세기 설정, 개인정보 설정 API 연결",
+        "ㆍ 카카오 로그인 구현",
+        "ㆍ 서버로부터 전달받은 데이터를 적절히 처리하는 정제 함수 모듈화",
+        "ㆍ API 호출 코드 모듈화를 통한 코드 단순화",
+        "ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상",
+      ],
+      task: [
         "ㆍ react-native-modal을 이용하여 모달 구현",
         "ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 가리는 경우 스크롤이 가능하도록 구현",
         "ㆍ react-navigation을 이용하여 화면 전환 기능 구현",
@@ -480,26 +489,28 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         "ㆍ react-native-seoul/kakao-login을 이용하여 카카오 로그인 구현",
         "ㆍ 카카오 맵 API를 이용하여 위치 검색 기능 구현",
         "ㆍ react-native-background-fetch, react-native-geolocation을 이용하여 위치를 15분마다 전송하도록 구현",
-        "ㆍ react-query를 이용하여 API 호출 수 감소 및 API 호출 효율성 항샹",
-        "ㆍ API 호출 코드 모듈화를 통한 코드 단순화",
         "ㆍ react-native-camera-roll, react-native-view-shot을 이용하여 하루 날씨 이슈가 정리된 화면을 갤러리에 저장할 수 있는 기능 구현",
-        "ㆍ react-native의 RefreshControl을 이용하여 아래로 드래그 시 새로고침되도록 기능 구현",
-        "ㆍ 서버로부터 전달 받은 데이터를 적절히 처리하는 정제 함수 모듈화",
-        "ㆍ react-query를 통한 데이터 캐싱 기능 구현, API 호출 수 감소 및 효율성 개선 ",
-        "ㆍ 화면 구현, API 연결",
+        "ㆍ react-native의 RefreshControl을 이용하여 화면 드래그를 통한 새로고침 기능 구현",
       ],
       trouble: [
-        "ㆍ JavaScript fetch함수를 이용한 API 호출 시 화면이 렌더링되는 모든 경우에 API 호출 발생",
-        "ㆍ react-query를 이용하여 수신한 데이터를 10분동안 캐싱하도록 구현",
-        "ㆍ API 호출 수 감소 및 효율성 개선",
+        "ㆍ JavaScript fetch 함수를 이용한 API 호출 시 컴포넌트가 렌더링 되는 모든 경우에 API 호출 발생",
+        "  ㆍ react-query를 이용하여 수신한 데이터를 10분 동안 캐싱하도록 구현",
+        "  ㆍ API 호출 수 감소 및 효율성 개선",
+        "\n",
         "ㆍ background 기능 구현 도중  background-fetch 정상 작동 여부 확인이 불가능한 문제 발생",
-        "ㆍ appstate를 이용하여 background-fetch 3가지 상태를 확인",
+        "  ㆍ appstate를 이용하여 background-fetch 3가지 상태를 확인",
+        "\n",
         "ㆍ react-query를 이용한 api 호출 과정에서 데이터 전송이 끝나지 않은 상태에서 화면이 렌더링 되는 문제 발생",
-        "ㆍ 데이터가 준비될 때까지 컴포넌트 렌더링을 중지시키는 useSuspenseQuery훅 이용",
+        "   ㆍ 데이터가 준비될 때까지 컴포넌트 렌더링을 중지시키는 useSuspenseQuery 훅 이용",
+        "\n",
         "ㆍ react-native-camera-roll을 이용하여 사진 저장 기능 구현 도중 null 값이 prop으로 전달되어 발생하는 NSNumber 에러 발생",
-        "ㆍ 해당 prop에 null값이 전달되지 않도록 보장하여 NSNumber 에러가 발생하지 않도록 내장 함수 수정",
+        "   ㆍ 해당 prop에 null 값이 전달되지 않도록 보장하여 NSNumber 에러가 발생하지 않도록 내장 함수 수정",
       ],
-      feeling: [],
+      feeling: [
+        "ㆍ 오래 알고 지냈던 친구들과 진행했던 프로젝트였기에 갈등 없이 프로젝트를 끝낼 수 있다고 생각했습니다. \n   프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 생기기 시작했고, 프로젝트가 중단되었습니다. \n   정이 많았던 프로젝트였기에 남아있는 부분들을 구현했습니다. \n   힘들었지만 의사소통과 팀원 간의 존중 및 배려가 중요하다고 한 번 더 배워갈 수 있었던 프로젝트였습니다.",
+        "\n",
+        "ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, OS의 요구 사항에 맞춰 개발하는 과정에서 많은 시행착오와 학습이 필요했습니다.\n   플랫폼별 제약 사항을 고려하여 구현하는 데 어려움을 겪었지만, OS의 세부적인 부분까지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.",
+      ],
       link: "https://github.com/k-oyun/Waither-FE",
     },
     {
@@ -590,7 +601,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
                 </ModalContent>
               ))}
               <ModalMainTitle $ismobile={isMobile}>
-                What did I do
+                What did I Implement
               </ModalMainTitle>
               {projectsDetail[selectedProject].task.map((task, taskIndex) => (
                 <ModalContent key={taskIndex} $ismobile={isMobile}>
