@@ -14,6 +14,7 @@ interface HeaderProps {
   onAboutMeClick: () => void;
   onSkillsClick: () => void;
   onProjectsClick: () => void;
+  currentComponent: string;
 }
 const HeaderNav = styled.nav<styleType>`
   display: flex;
@@ -95,6 +96,7 @@ const Header: React.FC<HeaderProps> = ({
   onAboutMeClick,
   onSkillsClick,
   onProjectsClick,
+  currentComponent,
 }) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
@@ -104,48 +106,45 @@ const Header: React.FC<HeaderProps> = ({
     isAboutMe: true,
     isSkills: false,
     isProjects: false,
-    isContact: false,
   });
 
-  const onclickAboutMe = () => {
-    setHeaderState((prev) => ({
-      ...prev,
-      isAboutMe: !prev.isAboutMe,
-      isSkills: false,
-      isProjects: false,
-      isContact: false,
-    }));
-  };
+  useEffect(() => {
+    if (currentComponent === "AboutMe") {
+      setHeaderState({ isAboutMe: true, isSkills: false, isProjects: false });
+    } else if (currentComponent === "Skills") {
+      setHeaderState({ isAboutMe: false, isSkills: true, isProjects: false });
+    } else if (currentComponent === "Projects") {
+      setHeaderState({ isAboutMe: false, isSkills: false, isProjects: true });
+    }
+  }, [currentComponent]);
 
-  const onclickSkills = () => {
-    setHeaderState((prev) => ({
-      ...prev,
-      isSkills: !prev.isSkills,
-      isAboutMe: false,
-      isProjects: false,
-      isContact: false,
-    }));
-  };
+  // const onclickAboutMe = () => {
+  //   setHeaderState((prev) => ({
+  //     ...prev,
+  //     isAboutMe: !prev.isAboutMe,
+  //     isSkills: false,
+  //     isProjects: false,
+  //   }));
+  // };
 
-  const onclickProjects = () => {
-    setHeaderState((prev) => ({
-      ...prev,
-      isProjects: !prev.isProjects,
-      isAboutMe: false,
-      isSkills: false,
-      isContact: false,
-    }));
-  };
+  // const onclickSkills = () => {
+  //   setHeaderState((prev) => ({
+  //     ...prev,
+  //     isSkills: !prev.isSkills,
+  //     isAboutMe: false,
+  //     isProjects: false,
+  //   }));
+  // };
 
-  const onclickContact = () => {
-    setHeaderState((prev) => ({
-      ...prev,
-      isContact: !prev.isContact,
-      isAboutMe: false,
-      isSkills: false,
-      isProjects: false,
-    }));
-  };
+  // const onclickProjects = () => {
+  //   setHeaderState((prev) => ({
+  //     ...prev,
+  //     isProjects: !prev.isProjects,
+  //     isAboutMe: false,
+  //     isSkills: false,
+  //   }));
+  // };
+
   //=========================================================
 
   //=========================================================
@@ -156,7 +155,6 @@ const Header: React.FC<HeaderProps> = ({
         $ismobile={isMobile}
         $isaboutme={headerState.isAboutMe}
         onClick={() => {
-          onclickAboutMe();
           onAboutMeClick();
         }}
       >
@@ -166,7 +164,6 @@ const Header: React.FC<HeaderProps> = ({
         $ismobile={isMobile}
         $isskills={headerState.isSkills}
         onClick={() => {
-          onclickSkills();
           onSkillsClick();
         }}
       >
@@ -176,19 +173,11 @@ const Header: React.FC<HeaderProps> = ({
         $ismobile={isMobile}
         $isprojects={headerState.isProjects}
         onClick={() => {
-          onclickProjects();
           onProjectsClick();
         }}
       >
         Projects
       </HeaderList>
-      {/* <HeaderList
-        $ismobile={isMobile}
-        $iscontact={headerState.isContact}
-        onClick={onclickContact}
-      >
-        Contact
-      </HeaderList> */}
     </HeaderNav>
   );
 };

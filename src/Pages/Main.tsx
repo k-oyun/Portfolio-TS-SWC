@@ -4,7 +4,7 @@ import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import SkillsTest from "../Components/SkillsTest";
 import AboutMeTest from "../Components/AboutMeTest";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Projects from "../Components/Projects";
 import ProjectsTest from "../Components/ProjectsTest";
 
@@ -41,17 +41,62 @@ function King() {
     }
   };
 
+  const [currentComponent, setCurrentComponent] = useState<string>("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === aboutMeRef.current) {
+              setCurrentComponent("AboutMe");
+            } else if (entry.target === skillsRef.current) {
+              setCurrentComponent("Skills");
+            } else if (entry.target === projectsRef.current) {
+              setCurrentComponent("Projects");
+            }
+          } else {
+            if (
+              entry.target === aboutMeRef.current &&
+              currentComponent === "AboutMe"
+            ) {
+              setCurrentComponent("");
+            } else if (
+              entry.target === skillsRef.current &&
+              currentComponent === "Skills"
+            ) {
+              setCurrentComponent("");
+            } else if (
+              entry.target === projectsRef.current &&
+              currentComponent === "Projects"
+            ) {
+              setCurrentComponent("");
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (aboutMeRef.current) observer.observe(aboutMeRef.current);
+    if (skillsRef.current) observer.observe(skillsRef.current);
+    if (projectsRef.current) observer.observe(projectsRef.current);
+
+    return () => {
+      if (aboutMeRef.current) observer.unobserve(aboutMeRef.current);
+      if (skillsRef.current) observer.unobserve(skillsRef.current);
+      if (projectsRef.current) observer.unobserve(projectsRef.current);
+    };
+  }, [currentComponent]);
+
   return (
     <MainContainer>
       <Header
         onAboutMeClick={() => ScrollMove(aboutMeRef)}
         onSkillsClick={() => ScrollMove(skillsRef)}
         onProjectsClick={() => ScrollMove(projectsRef)}
+        currentComponent={currentComponent}
       />
-      {/* <AboutMeTest ref={aboutMeRef} />
-      <SkillsTest ref={skillsRef} />
-      <ProjectsTest ref={projectsRef} /> */}
-
       <Component>
         <AboutMeTest ref={aboutMeRef} />
       </Component>
