@@ -62,9 +62,9 @@ function King() {
         <ProjectsTest ref={projectsRef} />
       </Component>
 
-      {/* <AboutMe  /> */}
-      {/* <Skills /> */}
-      {/* <Projects ref={projectsRef} /> */}
+      {/* <AboutMe />
+      <Skills />
+      <Projects ref={projectsRef} /> */}
     </MainContainer>
   );
 }

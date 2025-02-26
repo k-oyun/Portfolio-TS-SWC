@@ -4,19 +4,78 @@ import mobile from "../Assets/Image/Png/mobile.png";
 import pc from "../Assets/Image/Png/pc.png";
 import mindBookPc from "../Assets/Image/Png/mindBookPc.png";
 import mindBookMobile from "../Assets/Image/Png/mindBookMobile.png";
+import mindBookLogin from "../Assets/Image/Png/mindBookLogin.png";
+import mindBookList from "../Assets/Image/Png/mindBookList.png";
+import mindBookMain from "../Assets/Image/Png/mindBookMain.png";
+import mindBookReport from "../Assets/Image/Png/mindBookReport.png";
+import mindBookWriteReport from "../Assets/Image/Png/mindBookWriteReport.png";
 import waitherPc from "../Assets/Image/Png/waitherPc.png";
 import waitherMobile from "../Assets/Image/Png/waitherMobile.png";
-import defloyPc from "../Assets/Image/Png/defloyPc.png";
-import defloyMobile from "../Assets/Image/Png/defloyMobile.png";
+import waitherMorning from "../Assets/Image/Png/waitherMorning.png";
+import waitherNight from "../Assets/Image/Png/waitherNight.png";
+import waitherLogin from "../Assets/Image/Png/waitherLogin.png";
+import waitherReport from "../Assets/Image/Png/waitherReport.png";
+import waitherSurvey1 from "../Assets/Image/Png/waitherSurvey1.png";
+import waitherSurvey2 from "../Assets/Image/Png/waitherSurvey2.png";
+import waitherSetting from "../Assets/Image/Png/waitherSetting.png";
+import waitherWindSetting from "../Assets/Image/Png/waitherWindSetting.png";
+import deployPc from "../Assets/Image/Png/deployPc.png";
+import deployMobile from "../Assets/Image/Png/deployMobile.png";
+import deployLogin from "../Assets/Image/Png/deployLogin.png";
+import deployHome from "../Assets/Image/Png/deployHome.png";
+import deployMain from "../Assets/Image/Png/deployMain.png";
+import deployMyPage from "../Assets/Image/Png/deployMyPage.png";
+import deployAddApp from "../Assets/Image/Png/deployAddApp.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
 interface styleType {
   $ismobile?: boolean;
   $image?: string;
+  $detailimage?: string;
   $ismousehover?: boolean;
   $ismodalon?: boolean;
+  $isselectedWaither?: boolean;
 }
+
+const ModalCloseBtnAnimation = keyframes`
+    0% {
+      transform: rotate(0deg);
+      filter: brightness(1);
+    }
+    25% {
+      transform: rotate(-15deg);
+      filter: brightness(1.5);
+    }
+    50% {
+      transform: rotate(15deg);
+      filter: brightness(0.6);
+    }
+    75% {
+      transform: rotate(-15deg);
+      filter: brightness(1.5);
+    }
+    100% {
+      transform: rotate(0deg);
+      filter: brightness(1); 
+  }`;
+
+const DetailTxtAnimation = keyframes`
+0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }`;
 const ProjectsContainer = styled.div<styleType>`
   display: flex;
   flex-direction: row;
@@ -31,7 +90,7 @@ const ProjectsContainer = styled.div<styleType>`
   background-position: center;
 `;
 
-const GameScreenContainer = styled.div<styleType>`
+const ProjectScreenContainer = styled.div<styleType>`
   width: 1400px;
   height: 600px;
   display: flex;
@@ -42,7 +101,7 @@ const GameScreenContainer = styled.div<styleType>`
   margin-top: 50px;
 `;
 
-const GameScreen = styled.div<styleType>`
+const ProjectScreen = styled.div<styleType>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +164,7 @@ const DetailTxt = styled.span<styleType>`
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
     0 0 0px red, 0 0 0px red;
   cursor: pointer;
+  animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
 `;
 
 const PreviousBtn = styled(motion.svg)<styleType>`
@@ -176,19 +236,64 @@ const Modal = styled.div<styleType>`
   transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
 `;
 
+const ModalScreenContainer = styled.div<styleType>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: ${(props) =>
+    props.$isselectedWaither
+      ? props.$ismobile
+        ? "200px" // $isselectedWaither가 true이고 모바일일 때의 width
+        : "500px" // $isselectedWaither가 true이고 컴퓨터일 때의 width
+      : props.$ismobile
+      ? "400px" // $isselectedWaither가 false이고 모바일일 때의 width
+      : "800px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 width
+
+  height: ${(props) =>
+    props.$isselectedWaither
+      ? props.$ismobile
+        ? "320px" // $isselectedWaither가 true이고 모바일일 때의 height
+        : "620px" // $isselectedWaither가 true이고 컴퓨터일 때의 height
+      : props.$ismobile
+      ? "140px" // $isselectedWaither가 false이고 모바일일 때의 height
+      : "365px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 height
+`;
+
 const ModalScreen = styled.div<styleType>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(props) => (props.$ismobile ? "250px" : "650px")};
-  height: ${(props) => (props.$ismobile ? "140px" : "325px")};
+  width: ${(props) =>
+    props.$isselectedWaither
+      ? props.$ismobile
+        ? "300px;" // $isselectedWaither가 true이고 모바일일 때의 width
+        : "300px" // $isselectedWaither가 true이고 컴퓨터일 때의 width
+      : props.$ismobile
+      ? "250px" // $isselectedWaither가 false이고 모바일일 때의 width !!!!
+      : "650px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 width!!!!
+
+  height: ${(props) =>
+    props.$isselectedWaither
+      ? props.$ismobile
+        ? "315px" // $isselectedWaither가 true이고 모바일일 때의 height
+        : "615px" // $isselectedWaither가 true이고 컴퓨터일 때의 height
+      : props.$ismobile
+      ? "140px" // $isselectedWaither가 false이고 모바일일 때의 height !!!!
+      : "365px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 height !!!!!
+  background-image: ${(props) => `url(${props.$detailimage})`};
   background-position: center;
-  margin-top: 50px;
   background-size: cover;
   border-radius: 15px;
-  box-shadow: 0 0 15px white;
+  box-shadow: ${(props) => (props.$isselectedWaither ? "" : "0 0 15px white")};
   border: ${(props) =>
-    props.$ismobile ? "2px solid white" : "5px solid white"};
+    props.$isselectedWaither
+      ? props.$ismobile
+        ? "" // $isselectedWaither가 true이고 모바일일 때의 border
+        : "" // $isselectedWaither가true이고 컴퓨터일 때의 border
+      : props.$ismobile
+      ? "2px solid white" // $isselectedWaither가 false이고 모바일일 때의 border
+      : "5px solid white"}; // $isselectedWaither가 false이고 컴퓨터일 때의 border
   transition: box-shadow 0.5s ease-in-out, border 0.5s ease;
 `;
 
@@ -200,31 +305,8 @@ const ModalTxtContainer = styled.div<styleType>`
   margin-top: 30px;
 `;
 
-const ModalCloseBtnAnimation = keyframes`
-    0% {
-      transform: rotate(0deg);
-      filter: brightness(1);
-    }
-    25% {
-      transform: rotate(-15deg);
-      filter: brightness(1.5);
-    }
-    50% {
-      transform: rotate(15deg);
-      filter: brightness(0.6);
-    }
-    75% {
-      transform: rotate(-15deg);
-      filter: brightness(1.5);
-    }
-    100% {
-      transform: rotate(0deg);
-      filter: brightness(1); 
-  }`;
-
 const ModalCloseBtn = styled.button<styleType>`
   position: absolute;
-  /* background-color: red; */
   font-size: ${(props) => (props.$ismobile ? "30px" : "50px")};
   font-family: "Neon";
   color: white;
@@ -259,7 +341,8 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   const [currentProject, setCurrentProject] = useState<number>(0);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
   const [isModalOn, setIsModalOn] = useState<boolean>(false);
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number>(0);
+  const [selectedProjectImg, setSelectedProjectImg] = useState<number>(0);
 
   const onMouseScreenEnter = () => {
     setIsMouseHover(true);
@@ -272,6 +355,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
 
   const onClickDetail = () => {
     setSelectedProject(currentProject);
+    setSelectedProjectImg(0);
     setIsModalOn(true);
     console.log(isModalOn);
   };
@@ -299,7 +383,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       tech: isMobile
         ? "React\nJavaScript, TypeScript\nStyled-Components"
         : "React, JavaScript, TypeScript, Styled-Components",
-      image: isMobile ? defloyMobile : defloyPc,
+      image: isMobile ? deployMobile : deployPc,
     },
     {
       id: 3,
@@ -313,16 +397,27 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
     },
   ];
 
-  const beforeGameScreen = () => {
+  const beforeProjectScreen = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
-  const nextGameScreen = () => {
+  const nextProjectScreen = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
   };
+
   const project = projects[currentProject];
 
   const projectsDetail = [
     {
+      image: [
+        waitherMorning,
+        waitherNight,
+        waitherLogin,
+        waitherReport,
+        waitherSurvey1,
+        waitherSurvey2,
+        waitherSetting,
+        waitherWindSetting,
+      ],
       part: [],
       task: [
         "ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",
@@ -358,6 +453,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       link: "https://github.com/k-oyun/Waither-FE",
     },
     {
+      image: [deployLogin, deployHome, deployMain, deployMyPage, deployAddApp],
       part: [],
       task: ["파일 업로드 기능 구현", "헤더 구현", "드롭다운 기능 구현"],
       trouble: [],
@@ -365,6 +461,13 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       link: "https://github.com/k-oyun/Deploy-Surfing",
     },
     {
+      image: [
+        mindBookLogin,
+        mindBookMain,
+        mindBookList,
+        mindBookReport,
+        mindBookWriteReport,
+      ],
       part: [],
       task: ["각 데이터 정제함수 구현", "", ""],
       trouble: [],
@@ -372,17 +475,55 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       link: "https://github.com/k-oyun/MindBook-FE",
     },
   ];
-
-  // useEffect(() => {
-  //   console.log(isModalOn);
-  // }, [isModalOn]);
+  const beforeProjectImg = () => {
+    setSelectedProjectImg(
+      (prev) =>
+        (prev - 1 + projectsDetail[selectedProject].image.length) %
+        projectsDetail[selectedProject].image.length
+    );
+    console.log(selectedProjectImg);
+  };
+  const nextProjectImg = () => {
+    setSelectedProjectImg(
+      (prev) => (prev + 1) % projectsDetail[selectedProject].image.length
+    );
+  };
 
   return (
     <>
       {selectedProject !== null ? (
         <ModalContainer $ismodalon={isModalOn} $ismobile={isMobile}>
           <Modal $ismodalon={isModalOn} $ismobile={isMobile}>
-            <ModalScreen $ismobile={isMobile} />
+            <ModalScreenContainer
+              $ismobile={isMobile}
+              $isselectedWaither={selectedProject === 0}
+            >
+              <PreviousBtn
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                $ismobile={isMobile}
+                onClick={beforeProjectImg}
+              >
+                <path d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </PreviousBtn>
+              <ModalScreen
+                $ismobile={isMobile}
+                $detailimage={
+                  projectsDetail[selectedProject].image[selectedProjectImg]
+                }
+                $isselectedWaither={selectedProject === 0}
+              />
+              {/* ))} */}
+              <NextBtn
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                $ismobile={isMobile}
+                onClick={nextProjectImg}
+              >
+                <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </NextBtn>
+            </ModalScreenContainer>
+
             <ModalCloseBtn
               $ismobile={isMobile}
               onClick={() => {
@@ -441,16 +582,16 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         </ModalContainer>
       ) : null}
       <ProjectsContainer ref={ref} $ismodalon={isModalOn}>
-        <GameScreenContainer>
+        <ProjectScreenContainer>
           <PreviousBtn
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            onClick={beforeGameScreen}
+            onClick={beforeProjectScreen}
             $ismobile={isMobile}
           >
             <path d="M15.75 19.5 8.25 12l7.5-7.5" />
           </PreviousBtn>
-          <GameScreen
+          <ProjectScreen
             $ismobile={isMobile}
             $image={project.image}
             key={project.id}
@@ -469,16 +610,16 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
                 Detail
               </DetailTxt>
             </ProjectCard>
-          </GameScreen>
+          </ProjectScreen>
           <NextBtn
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            onClick={nextGameScreen}
+            onClick={nextProjectScreen}
             $ismobile={isMobile}
           >
             <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </NextBtn>
-        </GameScreenContainer>
+        </ProjectScreenContainer>
       </ProjectsContainer>
     </>
   );

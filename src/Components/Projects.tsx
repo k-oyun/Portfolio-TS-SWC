@@ -2,9 +2,9 @@ import { forwardRef, useState } from "react";
 import { styled } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
 import pc from "../Assets/Image/Png/pc.png";
-import mindBook from "../Assets/Image/Png/mind_book.png";
-import waither from "../Assets/Image/Png/waither.png";
-import defloy from "../Assets/Image/Png/defloy.png";
+import mindBook from "../Assets/Image/Png/mindBookPc.png";
+import waither from "../Assets/Image/Png/waitherPc.png";
+import defloy from "../Assets/Image/Png/defloyPc.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
@@ -196,7 +196,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
   };
   const project = projects[currentProject];
-  console.log(project);
+
   return (
     <ProjectsContainer ref={ref}>
       <GameScreenContainer>

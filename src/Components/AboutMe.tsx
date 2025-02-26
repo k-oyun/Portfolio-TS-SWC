@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
-import pc from "../Assets/Image/png/pc.png";
+import pc from "../Assets/Image/Png/pc.png";
 import myPic from "../Assets/png/Image/mabro.jpg";
 import muscle from "../Assets/png/Image/muscle.png";
 import musclesmall from "../Assets/Image/Png/muslcesmall.png";

@@ -67,11 +67,8 @@ const fiXedNeon = keyframes`
 const HeaderList = styled.li<styleType>`
   padding-left: ${(props) => (props.$ismobile ? "21px" : "50px")};
   padding-right: ${(props) => (props.$ismobile ? "25px" : "50px")};
-  /* margin: ${(props) => (props.$ismobile ? "0 20px" : "0 100px")}; */
   font-size: ${(props) => (props.$ismobile ? "0.75rem" : "1.7rem")};
   color: #fff;
-  /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
-    0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080; */
   font-family: "Neon";
   white-space: nowrap;
   text-align: center;
@@ -185,13 +182,13 @@ const Header: React.FC<HeaderProps> = ({
       >
         Projects
       </HeaderList>
-      <HeaderList
+      {/* <HeaderList
         $ismobile={isMobile}
         $iscontact={headerState.isContact}
         onClick={onclickContact}
       >
         Contact
-      </HeaderList>
+      </HeaderList> */}
     </HeaderNav>
   );
 };
