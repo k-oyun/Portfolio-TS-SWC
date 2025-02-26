@@ -78,7 +78,7 @@ const DetailTxtAnimation = keyframes`
   }`;
 const ProjectsContainer = styled.div<styleType>`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   display: flex;
@@ -107,7 +107,7 @@ const ProjectScreen = styled.div<styleType>`
   align-items: center;
   justify-content: center;
   width: ${(props) => (props.$ismobile ? "290px" : "1200px")};
-  height: ${(props) => (props.$ismobile ? "550px" : "600px")};
+  height: ${(props) => (props.$ismobile ? "510px" : "570px")};
   background-image: ${(props) => `url(${props.$image})`};
   background-position: center;
   background-size: cover;
@@ -158,7 +158,7 @@ const ContentTxt = styled.span<styleType>`
 `;
 
 const DetailTxt = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "80px" : "80px")};
+  padding-top: ${(props) => (props.$ismobile ? "50px" : "50px")};
   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
   font-size: ${(props) => (props.$ismobile ? "15px" : "25px")};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
@@ -332,7 +332,57 @@ const ModalContent = styled.span<styleType>`
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
 `;
+const electricShock = keyframes`
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+const SpeechBubbleContainer = styled.div<styleType>`
+  width: ${(props) => (props.$ismobile ? "210px" : "400px")};
+  height: ${(props) => (props.$ismobile ? "20px" : "10px")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: ${(props) => (props.$ismobile ? "17px" : "27px")};
+  margin-top: ${(props) => (props.$ismobile ? "0px" : "30px")};
+  margin-bottom: ${(props) => (props.$ismobile ? "15px" : "0px")};
 
+  font-family: "Neon";
+  filter: drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb)
+    drop-shadow(0 0 10px #f148fb);
+  animation: ${electricShock} 1s infinite;
+`;
 const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
@@ -581,6 +631,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
           </Modal>
         </ModalContainer>
       ) : null}
+
       <ProjectsContainer ref={ref} $ismodalon={isModalOn}>
         <ProjectScreenContainer>
           <PreviousBtn
@@ -620,6 +671,9 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
             <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </NextBtn>
         </ProjectScreenContainer>
+        <SpeechBubbleContainer $ismobile={isMobile}>
+          Put Your Mouse On The Screen
+        </SpeechBubbleContainer>
       </ProjectsContainer>
     </>
   );
