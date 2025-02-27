@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
-import Skills from "../Components/Skills";
-import SkillsTest from "../Components/SkillsTest";
-import AboutMeTest from "../Components/AboutMeTest";
 import { useEffect, useRef, useState } from "react";
 import Projects from "../Components/Projects";
-import ProjectsTest from "../Components/ProjectsTest";
+import Skills from "../Components/Skills";
+// import AboutMe from "../Components/AboutMe";
+// import Skills from "../Components/Skills";
+// import Projects from "../Components/Projects";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -98,13 +98,13 @@ function King() {
         currentComponent={currentComponent}
       />
       <Component>
-        <AboutMeTest ref={aboutMeRef} />
+        <AboutMe ref={aboutMeRef} />
       </Component>
       <Component>
-        <SkillsTest ref={skillsRef} />
+        <Skills ref={skillsRef} />
       </Component>
       <Component>
-        <ProjectsTest ref={projectsRef} />
+        <Projects ref={projectsRef} />
       </Component>
 
       {/* <AboutMe />
