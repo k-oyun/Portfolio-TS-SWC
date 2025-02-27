@@ -175,9 +175,9 @@ const ProjectCard = styled.div<styleType>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: ${(props) => (props.$ismobile ? "20px" : "25px")};
-  padding-left: ${(props) => (props.$ismobile ? "30px" : "50px")};
-  opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)};
+  padding-top: ${(props) => (props.$ismobile ? "20px" : "1.4rem")};
+  padding-left: ${(props) => (props.$ismobile ? "30px" : "3.1rem")};
+  /* opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)}; */
   transition: opacity 1s ease-in-out;
   color: white;
 `;
