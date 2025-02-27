@@ -593,7 +593,6 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         deployMain,
         deployMyPage,
         deployAddApp,
-
         deployResetPassword,
       ],
       part: [
