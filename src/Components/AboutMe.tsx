@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
-import mobile from "../../public/mobile.png";
-import pc from "../../public/pc.png";
-import myPic from "../../public/mabro.jpg";
-import musclesmall from "../../public/muslcesmall.png";
+import mobile from "/mobile.png";
+import pc from "/pc.png";
+import myPic from "/mabro.jpg";
+import musclesmall from "/muslcesmall.png";
 
 interface styleType {
   $ismobile?: boolean;
