@@ -654,6 +654,10 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         "ㆍ keyframes을 이용하여 애니메이션 구현",
         "ㆍ useMediaQuery를 이용하여 반응형 웹 구현",
         "ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",
+        isMobile
+          ? "ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으\n    로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용"
+          : "ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용",
+        "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시\n       unobserve()를 호출하여 메모리 누수 방지",
       ],
       trouble: [],
       feeling: [
