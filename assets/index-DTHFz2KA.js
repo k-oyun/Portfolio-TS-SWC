@@ -398,7 +398,7 @@ Error generating stack: `+i.message+`
   white-space: pre-wrap;
   line-height: 20px;
 `,bb=st.span`
-  padding-top: ${n=>n.$ismobile?"40px":"35px"};
+  padding-top: ${n=>n.$ismobile?"40px":"2.15rem"};
   padding-left: ${n=>n.$ismobile?"220px":"0px"};
   font-size: ${n=>n.$ismobile?"15px":"25px"};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
