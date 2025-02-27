@@ -16,6 +16,8 @@ interface HeaderProps {
   onProjectsClick: () => void;
   currentComponent: string;
 }
+
+const Headers = styled.header``;
 const HeaderNav = styled.nav<styleType>`
   display: flex;
   align-items: center;
@@ -118,67 +120,38 @@ const Header: React.FC<HeaderProps> = ({
     }
   }, [currentComponent]);
 
-  // const onclickAboutMe = () => {
-  //   setHeaderState((prev) => ({
-  //     ...prev,
-  //     isAboutMe: !prev.isAboutMe,
-  //     isSkills: false,
-  //     isProjects: false,
-  //   }));
-  // };
-
-  // const onclickSkills = () => {
-  //   setHeaderState((prev) => ({
-  //     ...prev,
-  //     isSkills: !prev.isSkills,
-  //     isAboutMe: false,
-  //     isProjects: false,
-  //   }));
-  // };
-
-  // const onclickProjects = () => {
-  //   setHeaderState((prev) => ({
-  //     ...prev,
-  //     isProjects: !prev.isProjects,
-  //     isAboutMe: false,
-  //     isSkills: false,
-  //   }));
-  // };
-
-  //=========================================================
-
-  //=========================================================
-
   return (
-    <HeaderNav $ismobile={isMobile}>
-      <HeaderList
-        $ismobile={isMobile}
-        $isaboutme={headerState.isAboutMe}
-        onClick={() => {
-          onAboutMeClick();
-        }}
-      >
-        About Me
-      </HeaderList>
-      <HeaderList
-        $ismobile={isMobile}
-        $isskills={headerState.isSkills}
-        onClick={() => {
-          onSkillsClick();
-        }}
-      >
-        Skills
-      </HeaderList>
-      <HeaderList
-        $ismobile={isMobile}
-        $isprojects={headerState.isProjects}
-        onClick={() => {
-          onProjectsClick();
-        }}
-      >
-        Projects
-      </HeaderList>
-    </HeaderNav>
+    <Headers>
+      <HeaderNav $ismobile={isMobile}>
+        <HeaderList
+          $ismobile={isMobile}
+          $isaboutme={headerState.isAboutMe}
+          onClick={() => {
+            onAboutMeClick();
+          }}
+        >
+          About Me
+        </HeaderList>
+        <HeaderList
+          $ismobile={isMobile}
+          $isskills={headerState.isSkills}
+          onClick={() => {
+            onSkillsClick();
+          }}
+        >
+          Skills
+        </HeaderList>
+        <HeaderList
+          $ismobile={isMobile}
+          $isprojects={headerState.isProjects}
+          onClick={() => {
+            onProjectsClick();
+          }}
+        >
+          Projects
+        </HeaderList>
+      </HeaderNav>
+    </Headers>
   );
 };
 

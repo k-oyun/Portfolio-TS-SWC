@@ -122,7 +122,8 @@ const TxtContatiner = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: ${(props) => (props.$ismobile ? "300px" : "500px")};
+  width: ${(props) => (props.$ismobile ? "300px" : "600px")};
+  height: 370px;
   color: white;
   font-size: ${(props) => (props.$ismobile ? "0.6rem" : "1rem")};
   line-height: ${(props) => (props.$ismobile ? "15px" : "21px")};
