@@ -177,13 +177,13 @@ const ProjectCard = styled.div<styleType>`
   align-items: flex-start;
   padding-top: ${(props) => (props.$ismobile ? "20px" : "1.4rem")};
   padding-left: ${(props) => (props.$ismobile ? "30px" : "3.1rem")};
-  /* opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)}; */
+  opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)};
   transition: opacity 1s ease-in-out;
   color: white;
 `;
 
 const ProjectTitle = styled.span<styleType>`
-  padding-bottom: ${(props) => (props.$ismobile ? "4px" : "30px")};
+  padding-bottom: ${(props) => (props.$ismobile ? "4px" : "1.8rem")};
   font-size: ${(props) => (props.$ismobile ? "20px" : "40px")};
   /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
@@ -192,15 +192,15 @@ const ProjectTitle = styled.span<styleType>`
 `;
 
 const SubTitle = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "50px" : "40px")};
-  font-size: ${(props) => (props.$ismobile ? "15px" : "30px")};
+  padding-top: ${(props) => (props.$ismobile ? "50px" : "2.5rem")};
+  font-size: ${(props) => (props.$ismobile ? "15px" : "1.86rem")};
   text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
 `;
 
 const ContentTxt = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "15px" : "30px")};
-  font-size: ${(props) => (props.$ismobile ? "10px" : "20px")};
+  padding-top: ${(props) => (props.$ismobile ? "15px" : "1.87rem")};
+  font-size: ${(props) => (props.$ismobile ? "10px" : "1.25rem")};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
   white-space: pre-wrap;
@@ -210,7 +210,7 @@ const ContentTxt = styled.span<styleType>`
 const DetailTxt = styled.span<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
-  font-size: ${(props) => (props.$ismobile ? "15px" : "25px")};
+  font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
     0 0 0px red, 0 0 0px red;
   cursor: pointer;
@@ -656,7 +656,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         "ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",
         isMobile
           ? "ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으\n    로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용"
-          : "ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용",
+          : "ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고,\n    Header에 전달하여 네비게이션 UI에 동적으로 적용",
         isMobile
           ? "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시\n       unobserve()를 호출하여 메모리 누수 방지"
           : "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지",
