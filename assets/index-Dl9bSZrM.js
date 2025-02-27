@@ -375,24 +375,24 @@ Error generating stack: `+i.message+`
   align-items: flex-start;
   padding-top: ${n=>n.$ismobile?"20px":"1.4rem"};
   padding-left: ${n=>n.$ismobile?"30px":"3.1rem"};
-  /* opacity: ${n=>n.$ismousehover?.9:0}; */
+  opacity: ${n=>n.$ismousehover?.9:0};
   transition: opacity 1s ease-in-out;
   color: white;
 `,vb=st.span`
-  padding-bottom: ${n=>n.$ismobile?"4px":"30px"};
+  padding-bottom: ${n=>n.$ismobile?"4px":"1.8rem"};
   font-size: ${n=>n.$ismobile?"20px":"40px"};
   /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   text-shadow: 0 0 1px, 0 0 7px blue, 0 0 10px blue, 0 0 5px blue, 0 0 33px blue,
     0 0 0px blue, 0 0 0px blue;
 `,$0=st.span`
-  padding-top: ${n=>n.$ismobile?"50px":"40px"};
-  font-size: ${n=>n.$ismobile?"15px":"30px"};
+  padding-top: ${n=>n.$ismobile?"50px":"2.5rem"};
+  font-size: ${n=>n.$ismobile?"15px":"1.86rem"};
   text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
 `,H0=st.span`
-  padding-top: ${n=>n.$ismobile?"15px":"30px"};
-  font-size: ${n=>n.$ismobile?"10px":"20px"};
+  padding-top: ${n=>n.$ismobile?"15px":"1.87rem"};
+  font-size: ${n=>n.$ismobile?"10px":"1.25rem"};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
   white-space: pre-wrap;
@@ -400,7 +400,7 @@ Error generating stack: `+i.message+`
 `,bb=st.span`
   padding-top: ${n=>n.$ismobile?"40px":"2.15rem"};
   padding-left: ${n=>n.$ismobile?"220px":"0px"};
-  font-size: ${n=>n.$ismobile?"15px":"25px"};
+  font-size: ${n=>n.$ismobile?"15px":"1.56rem"};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
     0 0 0px red, 0 0 0px red;
   cursor: pointer;
@@ -597,7 +597,8 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp
     마감이 끝난 후, 적막 속에서 서로를 위로하며 프로젝트를 마무리할 수 있었습니다. 이 프로젝트를 통해, 완벽한 협업을 목표로 하더라도
     갈등은 피할 수 없다는 것, 그리고 진행 과정에서 감정이 요동치는 것은 자연스러운 일이지만, 어떻게 해결하느냐가
     바로 팀워크라는 것을 배웠습니다.`],link:"https://github.com/k-oyun/MindBook-FE"},{image:[d3,Up,Np,$p],part:["[ 프론트엔드, 기획, 디자인 ]","ㆍ 각 페이지 디자인 및 구현"],task:["ㆍ keyframes을 이용하여 애니메이션 구현","ㆍ useMediaQuery를 이용하여 반응형 웹 구현","ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",l?`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으
-    로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용`:"ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용",l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
+    로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용`:`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고,
+    Header에 전달하여 네비게이션 UI에 동적으로 적용`,l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
        unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지"],trouble:[],feeling:[l?`ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. 
     새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었고, 앞으로 더 도전적
     인 프로젝트에도 능숙하게 적응할 수 있다는 확신이 생겼습니다.`:`ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. 
