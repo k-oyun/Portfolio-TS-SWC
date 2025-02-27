@@ -208,7 +208,7 @@ const ContentTxt = styled.span<styleType>`
 `;
 
 const DetailTxt = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "50px" : "50px")};
+  padding-top: ${(props) => (props.$ismobile ? "40px" : "35px")};
   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
   font-size: ${(props) => (props.$ismobile ? "15px" : "25px")};
   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
@@ -262,7 +262,6 @@ const ModalContainer = styled.div<styleType>`
   justify-content: center;
   align-items: center;
   overflow-y: auto; /* 전체 모달에서 스크롤 가능 */
-  /* background-color: red; */
   z-index: 300;
   padding: 20px;
 `;
@@ -348,11 +347,12 @@ const ModalScreen = styled.div<styleType>`
 `;
 
 const ModalTxtContainer = styled.div<styleType>`
-  width: ${(props) => (props.$ismobile ? "250px" : "950px")};
+  width: ${(props) => (props.$ismobile ? "250px" : "1000px")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 30px;
+  margin-left: ${(props) => (props.$ismobile ? " 0px" : "50px")};
 `;
 
 const ModalCloseBtn = styled.button<styleType>`
@@ -378,7 +378,7 @@ const ModalMainTitle = styled.span<styleType>`
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
 `;
 const ModalContent = styled.span<styleType>`
-  font-size: ${(props) => (props.$ismobile ? "8px" : "16px")};
+  font-size: ${(props) => (props.$ismobile ? "8px" : "1rem")};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
   white-space: pre-wrap;
