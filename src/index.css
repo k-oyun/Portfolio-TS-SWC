@@ -17,5 +17,7 @@ body,
 
 @font-face {
   font-family: "Neon";
-  src: url("src/Assets/Neoneon.otf");
+  src: url("../public/Neoneon.otf") format("woff2"),
+    url("../public/Neoneon.otf") format("woff"),
+    url("../public/Neoneon.otf") format("opentype");
 }
