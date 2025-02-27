@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { keyframes } from "styled-components";
 import mobile from "../Assets/Image/Png/mobile.png";
@@ -208,18 +208,18 @@ const AboutMeTest = forwardRef<HTMLDivElement, any>((props, ref) => {
         <br />
         <br />
         코드를 작성하는 것에서 멈추지 않고, <br />
-        API 호출 수 감소, 코드 효율성 개선을 위해 깊이 고민합니다.
+        API 호출 수 감소, 효율성 개선을 위해 깊이 고민합니다.
         <br />
         <br />
         다양한 라이브러리를 적극 활용하여 최적의 해결책을 찾는 데 집중합니다.
         <br />
         <br />
         프로젝트 진행 중 놓쳤던 부분들을 분석하고 <br />
-        기록하는 습관을 통해 문제점을 공유하고 팀과 협력하여 개선해 나갑니다.
+        기록하는 습관을 길러, 문제점을 공유하고 팀과 협력하여 개선해 나갑니다.
         <br />
         <br />
-        함께 성장하고 발전하기 위해 노력하며, <br />
-        주변 사람들과 나란히 걷는 것을 중요하게 생각합니다.
+        팀워크를 최우선으로 생각하며, 함께 성장하고 발전할 수 있도록 <br />
+        팀원들과 발맞춰 나아가는 것을 중요하게 여깁니다.
       </TxtContatiner>
     </AboutMeContainer>
   );

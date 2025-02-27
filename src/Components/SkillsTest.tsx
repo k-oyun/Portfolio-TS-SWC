@@ -112,7 +112,6 @@ const LogoContainer = styled.div<styleType>`
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* justify-content: center; */
   position: relative;
   margin-top: ${(props) => (props.$ismobile ? "100px" : "130px")};
   /* background-color: blue; */

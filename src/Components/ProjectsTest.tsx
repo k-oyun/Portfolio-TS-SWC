@@ -20,6 +20,7 @@ import waitherReport from "../Assets/Image/Png/waitherReport.png";
 import waitherSurvey1 from "../Assets/Image/Png/waitherSurvey1.png";
 import waitherSurvey2 from "../Assets/Image/Png/waitherSurvey2.png";
 import waitherSetting from "../Assets/Image/Png/waitherSetting.png";
+import waitherSettingPicker from "../Assets/Image/Png/waitherSettingPicker.png";
 import waitherWindSetting from "../Assets/Image/Png/waitherWindSetting.png";
 import deployPc from "../Assets/Image/Png/deployPc.png";
 import deployMobile from "../Assets/Image/Png/deployMobile.png";
@@ -32,6 +33,11 @@ import deploRegister1 from "../Assets/Image/Png/deployRegister1.png";
 import deployRegister2 from "../Assets/Image/Png/deployRegister2.png";
 import deployEmailVerify from "../Assets/Image/Png/deployEmailVerify.png";
 import deployResetPassword from "../Assets/Image/Png/deployResetPassword.png";
+import portfolioPc from "../Assets/Image/Png/portfolioPc.png";
+import portfolioMobile from "../Assets/Image/Png/portfolioMobile.png";
+import portfolioProject1 from "../Assets/Image/Png/portfolioProject1.png";
+import portfolioProject2 from "../Assets/Image/Png/portfolioProject2.png";
+import portfolioModal from "../Assets/Image/Png/portfolioModal.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
@@ -133,7 +139,7 @@ const ProjectsContainer = styled.div<styleType>`
 `;
 
 const ProjectScreenContainer = styled.div<styleType>`
-  width: 1400px;
+  width: 100%;
   height: 600px;
   display: flex;
   justify-content: center;
@@ -162,7 +168,7 @@ const ProjectScreen = styled.div<styleType>`
 `;
 
 const ProjectCard = styled.div<styleType>`
-  width: ${(props) => (props.$ismobile ? "290px" : "1200px")};
+  width: ${(props) => (props.$ismobile ? "290px" : "100%")};
   height: ${(props) => (props.$ismobile ? "550px" : "600px")};
   background-color: black;
   /* font-family: "Neon"; */
@@ -406,9 +412,6 @@ const SpeechBubbleContainer = styled.div<styleType>`
   animation: ${electricShock} 1s infinite;
 `;
 
-const AccentContent = styled.span`
-  color: blue;
-`;
 const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
@@ -443,8 +446,8 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         : "Weather + Waiter의 합성어로, 사용자의 설정을 바탕으로 맞춤형 날씨 정보와 알림을 제공하는 앱 서비스",
       period: "2024.03 ~ 2024.12",
       tech: isMobile
-        ? "React Navite\nJavaScript, TypeScript\nReact-Query, Recoil, Styled-Components"
-        : "React Navite, JavaScript, TypeScript, React-Query, Recoil, Styled-Components",
+        ? "React Native\nJavaScript, TypeScript\nReact-Query, Recoil, Styled-Components"
+        : "React Native, JavaScript, TypeScript, React-Query, Recoil, Styled-Components",
       image: isMobile ? waitherMobile : waitherPc,
     },
     {
@@ -469,6 +472,17 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       tech: isMobile ? "HTML\nCSS\nJavaScript" : "HTML, CSS, JavaScript",
       image: isMobile ? mindBookMobile : mindBookPc,
     },
+    {
+      id: 4,
+      title: "Portfolio",
+      introduce: "프로젝트 및 프로필 소개를 위한 포트폴리오",
+
+      period: "2025.02 ~ 2025.02",
+      tech: isMobile
+        ? "React\nJavaScript, TypeScript\nStyled-Components"
+        : "React, JavaScript, TypeScript, Styled-Components",
+      image: isMobile ? portfolioMobile : portfolioPc,
+    },
   ];
 
   const beforeProjectScreen = () => {
@@ -490,6 +504,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         waitherSurvey1,
         waitherSurvey2,
         waitherSetting,
+        waitherSettingPicker,
         waitherWindSetting,
       ],
       part: [
@@ -501,6 +516,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         "ㆍ 바람세기 설정, 개인정보 설정 API 연결",
         "ㆍ 레포트 화면, 사용자 설정 화면 디자인",
         "ㆍ 카카오 로그인 구현",
+        "ㆍ 카카오 MAP API를 이용한 주소 검색 구현",
         "ㆍ 서버로부터 전달받은 데이터를 적절히 처리하는 정제 함수 모듈화",
         "ㆍ API 호출 코드 모듈화를 통한 코드 단순화",
         "ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상",
@@ -538,7 +554,7 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
         "  ㆍ API 호출 수 감소 및 효율성 개선",
         "\n",
         isMobile
-          ? "ㆍ background 기능 구현 도중  background-fetch 작동 여부\n   확인이 불가능한 문제 발생"
+          ? "ㆍ background 기능 구현 도중  background-fetch 작동 여부\n    확인이 불가능한 문제 발생"
           : "ㆍ background 기능 구현 도중  background-fetch 작동 여부 확인이 불가능한 문제 발생",
         "  ㆍ appstate를 이용하여 background-fetch 3가지 상태를 확인",
         "\n",
@@ -616,8 +632,8 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
       trouble: [
         "ㆍ API 연결 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",
         isMobile
-          ? "   ㆍ Server측에 Access-Control-Allow-Origin 헤더의 리스트에 프론트엔드 \n       개발 서버 URL을 추가하여 해결"
-          : "   ㆍ Server측에 Access-Control-Allow-Origin 헤더의 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결",
+          ? "   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 \n       개발 서버 URL을 추가하여 해결"
+          : "   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결",
       ],
       feeling: [
         isMobile
@@ -625,6 +641,30 @@ const Projects = forwardRef<HTMLDivElement, any>((props, ref) => {
           : "ㆍ 데드라인이 짧았던 해커톤 프로젝트였기에 빠른 의사소통과 효과적인 협업이 중요했습니다. 구현 과정에서 서버 측 문제를 신속하게 공유하며 해결해\n    나갔음에도 불구하고 마감 1시간 전, 배포 과정에서 문제가 발생했습니다. 조급해진 팀원들 사이에 긴장감이 감돌았고, 날이 선 말들이 오가며 분위기가\n    얼어붙었습니다. 마감이 끝난 후, 적막 속에서 서로를 위로하며 프로젝트를 마무리할 수 있었습니다. 이 프로젝트를 통해, 완벽한 협업을 목표로 하더라\n    도 갈등은 피할 수 없다는 것, 그리고 진행 과정에서 감정이 요동치는 것은 자연스러운 일이지만, 어떻게 해결하느냐가 바로 팀워크라는 것을 배웠습니\n    다.",
       ],
       link: "https://github.com/k-oyun/MindBook-FE",
+    },
+    {
+      image: [
+        portfolioPc,
+        portfolioProject1,
+        portfolioProject2,
+        portfolioModal,
+      ],
+      part: ["[ 프론트엔드, 기획, 디자인 ]", "ㆍ 각 페이지 디자인 및 구현"],
+      task: [
+        "ㆍ keyframes을 이용하여 애니메이션 구현",
+        "ㆍ useMediaQuery를 이용하여 반응형 웹 구현",
+        "ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",
+      ],
+      trouble: [],
+      feeling: [
+        isMobile
+          ? "ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. \n    새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었고, 앞으로 더 도전적\n    인 프로젝트에도 능숙하게 적응할 수 있다는 확신이 생겼습니다."
+          : "ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. 새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었고, 앞으로 더 도\n    전적인 프로젝트에도 능숙하게 적응할 수 있다는 확신이 생겼습니다.",
+        isMobile
+          ? "ㆍ 초기 구현 단계부터 TypeScript를 적용하며 이전 사용 방식의 문제점을 인지\n    할 수 있었습니다. 올바른 방법으로 TypeScript를 활용하고, 에러를 직면하고 \n    해결하는 과정을 거치면서 더욱 익숙해졌으며, 효율성과 유용함을 직접 체감할 \n    수 있었습니다."
+          : "ㆍ 초기 구현 단계부터 TypeScript를 적용하며 이전 사용 방식의 문제점을 인지할 수 있었습니다. 올바른 방법으로 TypeScript를 활용하고, 에러를 해결하\n    는 과정을 거치면서 더욱 익숙해졌으며, 효율성과 유용함을 직접 체감할 수 있었습니다.",
+      ],
+      link: "https://github.com/k-oyun/Portfolio-TS-SWC",
     },
   ];
   const beforeProjectImg = () => {
