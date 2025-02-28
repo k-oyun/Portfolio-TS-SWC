@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { keyframes, styled } from "styled-components";
 import mobile from "/mobile.png";
 import pc from "/pc.png";
@@ -686,6 +686,67 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
     );
   };
 
+  const preloadImages = (srcList: string[]) => {
+    return Promise.all(
+      srcList.map((src) => {
+        return new Promise<void>((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => resolve();
+          img.onerror = (err) => reject(err);
+        });
+      })
+    );
+  };
+
+  useEffect(() => {
+    const imagesToPreload = [
+      "/waitherPc.png",
+      "/waitherMobile.png",
+      "/deployPc.png",
+      "/deployMobile.png",
+      "/mindBookPc.png",
+      "/mindBookMobile.png",
+      "/portfolioPc.png",
+      "/portfolioMobile.png",
+      "/waitherLogin.png",
+      "/waitherMorning.png",
+      "/waitherNight.png",
+      "/waitherReport.png",
+      "/waitherSetting.png",
+      "/waitherSettingPicker.png",
+      "/waitherSurvey1.png",
+      "/waitherSurvey2.png",
+      "/waitherWindSetting.png",
+      "/deployLogin.png",
+      "/deployRegister1.png",
+      "/deployRegister2.png",
+      "/deployEmailVerify.png",
+      "/deployHome.png",
+      "/deployMain.png",
+      "/deployMyPage.png",
+      "/deployAddApp.png",
+      "/deployResetPassword.png",
+      "/mindBookLogin.png",
+      "/mindBookMain.png",
+      "/mindBookList.png",
+      "/mindBookReport.png",
+      "/mindBookWriteReport.png",
+      "/mindBookModal1.png",
+      "/mindBookModal2.png",
+      "/portfolioProject1.png",
+      "/portfolioProject2.png",
+      "/portfolioModal.png",
+    ];
+
+    preloadImages(imagesToPreload)
+      .then(() => {
+        console.log("모든 이미지가 미리 로드");
+      })
+      .catch((err) => {
+        console.error("오류 발생:", err);
+      });
+  }, []);
   return (
     <>
       {selectedProject !== null ? (
