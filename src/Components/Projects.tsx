@@ -509,9 +509,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         "[ 프론트엔드, 디자인 ]",
         "ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",
         isMobile
-          ? "ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / \n    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연결"
-          : "ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연결",
-        "ㆍ 바람세기 설정, 개인정보 설정 API 연결",
+          ? "ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / \n    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연동"
+          : "ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연동",
+        "ㆍ 바람세기 설정, 개인정보 설정 API 연동",
         "ㆍ 레포트 화면, 사용자 설정 화면 디자인",
         "ㆍ 카카오 로그인 구현",
         "ㆍ 카카오 MAP API를 이용한 주소 검색 구현",
@@ -624,7 +624,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
       ],
       task: ["ㆍ 데이터 정제 함수 구현", "ㆍ 도서 추가 시 상태 모달 구현", ""],
       trouble: [
-        "ㆍ API 연결 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",
+        "ㆍ API 연동 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",
         isMobile
           ? "   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 \n       개발 서버 URL을 추가하여 해결"
           : "   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결",
@@ -655,6 +655,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
           ? "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시\n       unobserve()를 호출하여 메모리 누수 방지"
           : "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지",
         "ㆍ Aws S3 CloudFront 정적 웹 배포",
+        isMobile
+          ? "   ㆍ CDN을 활용하여 이미지 응답 시간을 약 12배 단축시키고,\n       전체 콘텐츠 전송 성능 최적화"
+          : "   ㆍ CDN을 활용하여 이미지 응답 시간을 약 12배 단축시키고, 전체 콘텐츠 전송 성능 최적화",
       ],
       trouble: [],
       feeling: [
