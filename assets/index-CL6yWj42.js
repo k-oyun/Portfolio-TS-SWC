@@ -209,7 +209,7 @@ Error generating stack: `+i.message+`
   height: 370px;
   color: white;
   font-size: ${n=>n.$ismobile?"0.6rem":"1rem"};
-  line-height: ${n=>n.$ismobile?"15px":"21px"};
+  line-height: ${n=>n.$ismobile?"15px":"20px"};
   text-shadow: 0 0 2px #00aa00, 0 0 7px #00aa00, 0 0 17px #00aa00,
     0 0 27px #00aa00, 0 0 10px #00aa00, 0 0 52px #00aa00, 0 0 72px #00aa00;
   transition: opacity 0.5s ease-in-out;
@@ -544,9 +544,7 @@ Error generating stack: `+i.message+`
 사용자의 설정을 바탕으로 맞춤형 날씨 정보와
 알림을 제공하는 앱 서비스`:"Weather + Waiter의 합성어로, 사용자의 설정을 바탕으로 맞춤형 날씨 정보와 알림을 제공하는 앱 서비스",period:"2024.03 ~ 2024.12",tech:l?`React Native
 JavaScript, TypeScript
-React-Query, Recoil, Styled-Components`:"React Native, JavaScript, TypeScript, React-Query, Recoil, Styled-Components",image:l?mp:pp},{id:2,title:"Defloy Surfing",introduce:l?`Github, AWS, Docker 토큰을 활용해
-배포 환경을 자동으로 구축하여 개발자에게
-편리한 배포 과정을 제공하는 웹 서비스`:"Github, AWS, Docker 토큰을 활용해 배포 환경을 자동으로 구축하여 개발자에게 편리한 배포 과정을 제공하는 웹 서비스",period:"2024.03 ~ ing",tech:l?`React
+React-Query, Recoil, Styled-Components`:"React Native, JavaScript, TypeScript, React-Query, Recoil, Styled-Components",image:l?mp:pp},{id:2,title:"Defloy Surfing",introduce:"Github, AWS, Docker를 활용한 CI/CD 자동 구축 서비스",period:"2024.03 ~ ing",tech:l?`React
 JavaScript, TypeScript
 Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Ep:Mp},{id:3,title:"MindBook",introduce:l?`우울감, 무기력함, 불안감, 의욕 상실을 겪는
 현대인들을 위해 자기 치유와
@@ -554,11 +552,11 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Ep
 CSS
 JavaScript`:"HTML, CSS, JavaScript",image:l?lp:sp},{id:4,title:"Portfolio",introduce:"프로젝트 및 프로필 소개를 위한 포트폴리오",period:"2025.02 ~ 2025.02",tech:l?`React
 JavaScript, TypeScript
-Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp:d3}],B=()=>{c(Y=>(Y-1+U.length)%U.length)},H=()=>{c(Y=>(Y+1)%U.length)},V=U[o],k=[{image:[yp,gp,vp,bp,xp,Sp,Cp,Tp,Ap],part:["[ 프론트엔드, 디자인 ]","ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",l?`ㆍ ::marker회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 
-    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연결`:"ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연결","ㆍ 바람세기 설정, 개인정보 설정 API 연결","ㆍ 레포트 화면, 사용자 설정 화면 디자인","ㆍ 카카오 로그인 구현","ㆍ 카카오 MAP API를 이용한 주소 검색 구현","ㆍ 서버로부터 전달받은 데이터를 적절히 처리하는 정제 함수 모듈화","ㆍ API 호출 코드 모듈화를 통한 코드 단순화","ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상"],task:["ㆍ react-native-modal을 이용하여 모달 구현",l?`ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 
+Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp:d3}],B=()=>{c(Y=>(Y-1+U.length)%U.length)},H=()=>{c(Y=>(Y+1)%U.length)},V=U[o],k=[{image:[yp,gp,vp,bp,xp,Sp,Cp,Tp,Ap],part:["[ 프론트엔드, 디자인 ]","ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",l?`ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 
+    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연결`:"ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연결","ㆍ 바람세기 설정, 개인정보 설정 API 연결","ㆍ 레포트 화면, 사용자 설정 화면 디자인","ㆍ 카카오 로그인 구현","ㆍ 카카오 MAP API를 이용한 주소 검색 구현","ㆍ 서버로부터 전달받은 데이터를 처리하는 정제 함수 모듈화를 통한 코드 단순화","ㆍ API 호출 코드 모듈화를 통한 코드 단순화","ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상","ㆍ 특정 기능 구현 시 IOS 플랫폼의 제약 사항에 맞춰 권한 설정"],task:["ㆍ react-native-modal을 이용하여 모달 구현",l?`ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 
     가리는 경우 스크롤이 가능하도록 구현`:"ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 가리는 경우 스크롤이 가능하도록 구현","ㆍ react-navigation을 이용하여 화면 전환 기능 구현",l?`ㆍ gorhom/bottom-sheet, react-native-picker/picker를 이용하여 
     시간을 선택할 수 있는 바텀 시트 구현`:"ㆍ gorhom/bottom-sheet, react-native-picker/picker를 이용하여 시간을 선택할 수 있는 바텀 시트 구현","ㆍ 사용자 설정 토글 구현",l?`ㆍ react-native-community/slider를 이용하여 사용자 민감도 조절이
-    가능한 슬라이딩 바 구현`:"ㆍ react-native-community/slider를 이용하여 사용자 민감도 조절이 가능한 슬라이딩 바 구현","ㆍ react-native-seoul/kakao-login을 이용하여 카카오 로그인 구현","ㆍ 카카오 맵 API를 이용하여 위치 검색 기능 구현",l?`ㆍ react-native-background-fetch, react-native-geolocation을 이용하여
+    가능한 슬라이딩 바 구현`:"ㆍ react-native-community/slider를 이용하여 사용자 민감도 조절이 가능한 슬라이딩 바 구현","ㆍ react-native-seoul/kakao-login을 이용하여 카카오 로그인 구현",l?`ㆍ react-native-background-fetch, react-native-geolocation을 이용하여
     위치를 15분마다 전송하도록 구현`:"ㆍ react-native-background-fetch, react-native-geolocation을 이용하여 위치를 15분마다 전송하도록 구현",l?`ㆍ react-native-camera-roll, react-native-view-shot을 이용하여 하루 날씨 
     이슈가 정리된 화면을 갤러리에 저장할 수 있는 기능 구현`:"ㆍ react-native-camera-roll, react-native-view-shot을 이용하여 하루 날씨 이슈가 정리된 화면을 갤러리에 저장할 수 있는 기능 구현",l?`ㆍ react-native의 RefreshControl을 이용하여 화면 드래그를 통한 
     새로고침 기능 구현`:"ㆍ react-native의 RefreshControl을 이용하여 화면 드래그를 통한 새로고침 기능 구현"],trouble:[l?`ㆍ JavaScript fetch 함수를 이용한 API 호출 시 컴포넌트가 렌더링 되는
@@ -569,46 +567,38 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp
     상태에서 컴포넌트가 렌더링 되는 문제 발생`:"ㆍ react-query를 이용한 api 호출 과정에서 데이터 로드가 끝나지 않은 상태에서 컴포넌트가 렌더링 되는 문제 발생","   ㆍ useSuspenseQuery 훅을 사용해 데이터 로드 전까지 컴포넌트 렌더링 제어",`
 `,l?`ㆍ react-native-camera-roll을 이용하여 사진 저장 기능 구현 도중 null 값이
     prop으로 전달되어 발생하는 NSNumber 에러 발생`:"ㆍ react-native-camera-roll을 이용하여 사진 저장 기능 구현 도중 null 값이 prop으로 전달되어 발생하는 NSNumber 에러 발생",l?`   ㆍ 해당 prop에 null 값이 전달되지 않도록 보장하여
-       NSNumber 에러가 발생하지 않도록 내장 함수 수정`:"   ㆍ 해당 prop에 null 값이 전달되지 않도록 보장하여 NSNumber 에러가 발생하지 않도록 내장 함수 수정"],feeling:[l?`ㆍ 오래 알고 지냈던 친구들과 진행했던 프로젝트였기에 갈등 없이 프로젝트를 끝
-    낼 수 있다고 생각했습니다. 프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 생
-    기기 시작했고, 프로젝트가 중단되었습니다. 정이 많았던 프로젝트였기에 끝까
-    지 구현하고 싶어 남아있는 부분들을 구현했습니다.  힘들었지만 의사소통과 
-    팀원 간의 존중 및 배려가 중요하다고  한 번 더 배워갈 수 있었던 프로젝트
-    였습니다.`:`ㆍ 오래 알고 지냈던 친구들과 진행했던 프로젝트였기에 갈등 없이 프로젝트를 끝낼 수 있다고 생각했습니다. 
-    프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 생기기 시작했고, 프로젝트가 중단되었습니다.
-    정이 많았던 프로젝트였기에 끝까지 구현하고 싶어 남아있는 부분들을 구현했습니다.
-    힘들었지만 의사소통과 팀원 간의 존중 및 배려가 중요하다고 한 번 더 배워갈 수 있었던 프로젝트였습니다.`,`
+       NSNumber 에러가 발생하지 않도록 내장 함수 수정`:"   ㆍ 해당 prop에 null 값이 전달되지 않도록 보장하여 NSNumber 에러가 발생하지 않도록 내장 함수 수정"],feeling:[l?`ㆍ 프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 발생해 중단되었습니다.
+    그러나 남은 부분을 주도적으로 구현하며 책임감을 가지고 프로젝트를 끝까지
+    마무리했습니다.
+    이 과정에서 자기 주도적인 태도와 책임감을 강화할 수 있었고, 의사소통의 중
+    요성을 배웠습니다. 또한, 팀워크에서 서로 존중하고 배려하는 태도가 협업의
+    성공에 중요한 역할을 한다는 것을 깨달았습니다.`:`ㆍ 프로젝트 진행 도중 팀원 간 의견 차이로 갈등이 발생해 중단되었습니다.
+    그러나 남은 부분을 주도적으로 구현하며 책임감을 가지고 프로젝트를 끝까지 마무리했습니다.
+    이 과정에서 자기 주도적인 태도와 책임감을 강화할 수 있었고, 의사소통의 중요성을 배웠습니다.
+    또한, 팀워크에서 서로 존중하고 배려하는 태도가 협업의 성공에 중요한 역할을 한다는 것을 깨달았습니다.`,`
 `,l?`ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, OS의 요구 사
     항에 맞춰 구현하는 과정에서 많은 시행착오와 학습이 필요했습니다. 플랫폼별 
     제약 사항을 고려하여 구현하는 데 어려움을 겪었지만, OS의 세부적인 부분까
-    지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.`:`ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, OS의 요구 사항에 맞춰 
-    구현하는 과정에서 많은 시행착오와 학습이 필요했습니다. 플랫폼별 제약 사항을 고려하여 구현하는 데 어려움을 겪었지만,
-    OS의 세부적인 부분까지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.`],link:"https://github.com/k-oyun/Waither-FE"},{image:[wp,Lp,_p,jp,Dp,Rp,Op,zp,Vp],part:["[ 프론트엔드, 디자인 ]","ㆍ 각 페이지 구현 및 API 연결","ㆍ 카카오 로그인 구현","ㆍ 토큰 암호화 및 복호화"],task:["ㆍ 파일 업로드 기능 구현","ㆍ Header 구현","ㆍ Footer 구현","ㆍ 이메일 인증, 비밀번호 재설정 모달 구현","ㆍ 비밀번호, 토큰 등 민감한 정보 보기/숨기기 기능 구현","ㆍ react-router-dom을 이용하여 SPA 내부에서 페이지 이동이 가능하도록 구현"],trouble:[""],feeling:[""],link:"https://github.com/k-oyun/Deploy-Surfing"},{image:[op,up,rp,cp,fp,hp,dp],part:["[ 프론트엔드, 기획 ]","ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API 연결"],task:["ㆍ 데이터 정제함수 구현","ㆍ 도서 추가 시 상태 모달 구현",""],trouble:["ㆍ API 연결 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",l?`   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 
-       개발 서버 URL을 추가하여 해결`:"   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결"],feeling:[l?`ㆍ 데드라인이 짧았던 해커톤 프로젝트였기에 빠른 의사소통과 효과적인 협업이
-    중요했습니다. 구현 과정에서 서버 측 문제를 신속하게 공유하며 해결해 나갔
-    음에도 불구하고 마감 1시간 전, 배포 과정에서 문제가 발생했습니다. 조급해진
-    팀원들 사이에 긴장감이 감돌았고, 날이 선 말들이 오가며 분위기가 얼어붙었
-    습니다. 마감이 끝난 후, 적막 속에서 서로를 위로하며 프로젝트를 마무리할 수
-    있었습니다. 이 프로젝트를 통해, 완벽한 협업을 목표로 하더라도 갈등은 피할
-    수 없다는 것, 그리고 진행 과정에서 감정이 요동치는 것은 자연스러운 일이지
-    만, 어떻게 해결하느냐가 바로 팀워크라는 것을 배웠습니다.`:`ㆍ 데드라인이 짧았던 해커톤 프로젝트였기에 빠른 의사소통과 효과적인 협업이 중요했습니다.
-    구현 과정에서 서버 측 문제를 신속하게 공유하며 해결해 나갔음에도 불구하고 마감 1시간 전, 배포 과정에서 문제가 발생했습니다. 
-    조급해진 팀원들 사이에 긴장감이 감돌았고, 날이 선 말들이 오가며 분위기가 얼어붙었습니다. 
-    마감이 끝난 후, 적막 속에서 서로를 위로하며 프로젝트를 마무리할 수 있었습니다. 이 프로젝트를 통해, 완벽한 협업을 목표로 하더라도
-    갈등은 피할 수 없다는 것, 그리고 진행 과정에서 감정이 요동치는 것은 자연스러운 일이지만, 어떻게 해결하느냐가
-    바로 팀워크라는 것을 배웠습니다.`],link:"https://github.com/k-oyun/MindBook-FE"},{image:[d3,Up,Np,$p],part:["[ 프론트엔드, 기획, 디자인 ]","ㆍ 각 페이지 디자인 및 구현"],task:["ㆍ keyframes을 이용하여 애니메이션 구현","ㆍ useMediaQuery를 이용하여 반응형 웹 구현","ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",l?`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으
-    로 감지하고, Header에 전달하여 네비게이션 UI에 동적으로 적용`:`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고,
-    Header에 전달하여 네비게이션 UI에 동적으로 적용`,l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
-       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지"],trouble:[],feeling:[l?`ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. 
-    새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었고, 앞으로 더 도전적
-    인 프로젝트에도 능숙하게 적응할 수 있다는 확신이 생겼습니다.`:`ㆍ 첫 반응형 웹 구현이라 걱정했지만, 예상보다 수월하게 완성할 수 있었습니다. 
-    새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었고,
-    앞으로 더 도전적인 프로젝트에도 능숙하게 적응할 수 있다는 확신이 생겼습니다.`,l?`ㆍ 초기 구현 단계부터 TypeScript를 적용하며 이전 사용 방식의 문제점을 인지
-    할 수 있었습니다. 올바른 방법으로 TypeScript를 활용하고, 에러를 직면하고 
-    해결하는 과정을 거치면서 더욱 익숙해졌으며, 효율성과 유용함을 직접 체감할 
-    수 있었습니다.`:`ㆍ 초기 구현 단계부터 TypeScript를 적용하며 이전 사용 방식의 문제점을 인지할 수 있었습니다. 
-    올바른 방법으로 TypeScript를 활용하고, 에러를 해결하는 과정을 거치면서 더욱 익숙해졌으며,
-    효율성과 유용함을 직접 체감할 수 있었습니다.`],link:"https://github.com/k-oyun/Portfolio-TS-SWC"}],$=()=>{S(Y=>(Y-1+k[m].image.length)%k[m].image.length),console.log(b)},P=()=>{S(Y=>(Y+1)%k[m].image.length)};return R.jsxs(R.Fragment,{children:[m!==null?R.jsx(xb,{$ismodalon:y,$ismobile:l,children:R.jsxs(Sb,{$ismodalon:y,$ismobile:l,children:[R.jsxs(Cb,{$ismobile:l,$isselectedWaither:m===0,children:[R.jsx(O4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",$ismobile:l,onClick:$,children:R.jsx("path",{d:"M15.75 19.5 8.25 12l7.5-7.5"})}),R.jsx(Tb,{$ismobile:l,$detailimage:k[m].image[b],$isselectedWaither:m===0}),R.jsx(z4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",$ismobile:l,onClick:P,children:R.jsx("path",{d:"m8.25 4.5 7.5 7.5-7.5 7.5"})})]}),R.jsx(Mb,{$ismobile:l,onClick:()=>{p(!1)},children:"x"}),R.jsxs(Ab,{$ismobile:l,children:[R.jsx(Bs,{$ismobile:l,children:"Part"}),k[m].part.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"What did I Implement"}),k[m].task.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"Trouble Shooting"}),k[m].trouble.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"What did I feel"}),k[m].feeling.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"Link"}),R.jsxs(Eb,{$ismobile:l,onClick:()=>window.open(k[m].link),children:["ㆍ ",k[m].link]})]})]})}):null,R.jsxs(pb,{ref:a,$ismodalon:y,children:[R.jsxs(mb,{children:[R.jsx(O4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",onClick:B,$ismobile:l,children:R.jsx("path",{d:"M15.75 19.5 8.25 12l7.5-7.5"})}),R.jsx(yb,{$ismobile:l,$image:V.image,onMouseEnter:M,onMouseLeave:O,children:R.jsxs(gb,{$ismousehover:h,$ismobile:l,children:[R.jsx(vb,{$ismobile:l,children:V.title}),R.jsx($0,{$ismobile:l,children:"Project Introduce"}),R.jsx(H0,{$ismobile:l,children:V.introduce}),R.jsx($0,{$ismobile:l,children:"Period"}),R.jsx(H0,{$ismobile:l,children:V.period}),R.jsx($0,{$ismobile:l,children:"Tech"}),R.jsx(H0,{$ismobile:l,children:V.tech}),R.jsx(bb,{$ismobile:l,onClick:z,children:"Detail"})]})},V.id),R.jsx(z4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",onClick:H,$ismobile:l,children:R.jsx("path",{d:"m8.25 4.5 7.5 7.5-7.5 7.5"})})]}),R.jsx(wb,{$ismobile:l,$ismousehover:h,children:h?l?"Touch Detail":"Click Detail":l?"Touch The Screen":"Put Your Mouse On The Screen"})]})]})}),Rb=st.div`
+    지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.`:`ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, iOS의 요구 사항에 맞춰 구현하는 과정에서 많은 시행착오와 학습이 필요했습니다.
+    iOS 제약 사항을 고려하여 구현하는 데 어려움을 겪었고, 특히 권한 설정이 제대로 되지 않아 기능이 정상적으로 작동하지 않고 에러가 발생했습니다.
+    이 과정에서 Xcode를 활용하여 각각의 기능에 필요한 권한을 정확하게 설정하는 방법을 배우게 되었습니다.`],link:"https://github.com/k-oyun/Waither-FE"},{image:[wp,Lp,_p,jp,Dp,Rp,Op,zp,Vp],part:["[ 프론트엔드, 디자인 ]","ㆍ 페이지 디자인 및 구현"],task:["ㆍ 파일 업로드 기능 구현","ㆍ Header, Footer 컴포넌트 구현","ㆍ 이메일 인증, 비밀번호 재설정 모달 구현","ㆍ 비밀번호, 토큰 등 민감한 정보 보기/숨기기 기능 구현","ㆍ react-router-dom을 이용하여 SPA 내부에서 페이지 이동이 가능하도록 구현"],trouble:[""],feeling:[""],link:"https://github.com/k-oyun/Deploy-Surfing"},{image:[op,up,rp,cp,fp,hp,dp],part:["[ 프론트엔드, 기획 ]",l?`ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API
+    연동`:"ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API 연동"],task:["ㆍ 데이터 정제 함수 구현","ㆍ 도서 추가 시 상태 모달 구현",""],trouble:["ㆍ API 연결 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",l?`   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 
+       개발 서버 URL을 추가하여 해결`:"   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결"],feeling:[l?`ㆍ 데드라인이 짧은 해커톤이었기에 빠른 의사소통과 효과적인 협업을 중요시
+    했습니다. 배포 직전 예상치 못한 문제가 발생해 긴장감이 고조되었지만, 끝까
+    지 해결하며 프로젝트를 완수했습니다. 이 경험을 통해 완벽한 협업을 목표로
+    하더라도 갈등은 불가피하며, 그 갈등을 해결하는 과정이 곧 팀워크임을
+    배웠습니다.`:`ㆍ 데드라인이 짧은 해커톤이었기에 빠른 의사소통과 효과적인 협업을 중요시했습니다.
+    배포 직전 예상치 못한 문제가 발생해 긴장감이 고조되었지만, 끝까지 해결하며 프로젝트를 완수했습니다.
+    이 경험을 통해 완벽한 협업을 목표로 하더라도 갈등은 불가피하며, 그 갈등을 해결하는 과정이 곧 팀워크임을 배웠습니다.`],link:"https://github.com/k-oyun/MindBook-FE"},{image:[d3,Up,Np,$p],part:["[ 프론트엔드, 기획, 디자인 ]","ㆍ 페이지 디자인 및 구현"],task:["ㆍ keyframes를 이용하여 애니메이션 구현","ㆍ useMediaQuery를 이용하여 반응형 웹 구현","ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",l?`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으
+    로 감지하고, 헤더 UI에 동적으로 적용`:"ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, 헤더 UI에 동적으로 적용",l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
+       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지"],trouble:[],feeling:[l?`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는
+    과정에서 자신감을 얻었습니다.
+    더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`:`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었습니다.
+    더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`,l?`ㆍ 이전 프로젝트에서 동적 타입으로 인해 런타임 에러가 발생하는 문제를 경험했
+    습니다.
+    이번에는 초기 구현 단계부터 TypeScript를 적용해 정적 타입을 사용하면서,
+    코드의 안정성과 유지 보수성이 향상되는 것을 직접 체감할 수 있었습니다.`:`ㆍ 이전 프로젝트에서 동적 타입으로 인해 런타임 에러가 발생하는 문제를 경험했습니다.
+    이번에는 초기 구현 단계부터 TypeScript를 적용해 정적 타입을 사용하면서, 코드의 안정성과 유지 보수성이 향상되는 것을 직접 체감할 수 있었습니다.`],link:"https://github.com/k-oyun/Portfolio-TS-SWC"}],$=()=>{S(Y=>(Y-1+k[m].image.length)%k[m].image.length),console.log(b)},P=()=>{S(Y=>(Y+1)%k[m].image.length)};return R.jsxs(R.Fragment,{children:[m!==null?R.jsx(xb,{$ismodalon:y,$ismobile:l,children:R.jsxs(Sb,{$ismodalon:y,$ismobile:l,children:[R.jsxs(Cb,{$ismobile:l,$isselectedWaither:m===0,children:[R.jsx(O4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",$ismobile:l,onClick:$,children:R.jsx("path",{d:"M15.75 19.5 8.25 12l7.5-7.5"})}),R.jsx(Tb,{$ismobile:l,$detailimage:k[m].image[b],$isselectedWaither:m===0}),R.jsx(z4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",$ismobile:l,onClick:P,children:R.jsx("path",{d:"m8.25 4.5 7.5 7.5-7.5 7.5"})})]}),R.jsx(Mb,{$ismobile:l,onClick:()=>{p(!1)},children:"x"}),R.jsxs(Ab,{$ismobile:l,children:[R.jsx(Bs,{$ismobile:l,children:"Part"}),k[m].part.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"What did I Implement"}),k[m].task.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"Trouble Shooting"}),k[m].trouble.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"What did I Learn"}),k[m].feeling.map((Y,W)=>R.jsx(Eo,{$ismobile:l,children:Y},W)),R.jsx(Bs,{$ismobile:l,children:"Link"}),R.jsxs(Eb,{$ismobile:l,onClick:()=>window.open(k[m].link),children:["ㆍ ",k[m].link]})]})]})}):null,R.jsxs(pb,{ref:a,$ismodalon:y,children:[R.jsxs(mb,{children:[R.jsx(O4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",onClick:B,$ismobile:l,children:R.jsx("path",{d:"M15.75 19.5 8.25 12l7.5-7.5"})}),R.jsx(yb,{$ismobile:l,$image:V.image,onMouseEnter:M,onMouseLeave:O,children:R.jsxs(gb,{$ismousehover:h,$ismobile:l,children:[R.jsx(vb,{$ismobile:l,children:V.title}),R.jsx($0,{$ismobile:l,children:"Project Introduce"}),R.jsx(H0,{$ismobile:l,children:V.introduce}),R.jsx($0,{$ismobile:l,children:"Period"}),R.jsx(H0,{$ismobile:l,children:V.period}),R.jsx($0,{$ismobile:l,children:"Tech"}),R.jsx(H0,{$ismobile:l,children:V.tech}),R.jsx(bb,{$ismobile:l,onClick:z,children:"Detail"})]})},V.id),R.jsx(z4,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",onClick:H,$ismobile:l,children:R.jsx("path",{d:"m8.25 4.5 7.5 7.5-7.5 7.5"})})]}),R.jsx(wb,{$ismobile:l,$ismousehover:h,children:h?l?"Touch Detail":"Click Detail":l?"Touch The Screen":"Put Your Mouse On The Screen"})]})]})}),Rb=st.div`
   display: flex;
   width: 100%;
   height: 100vh;
