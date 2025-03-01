@@ -126,7 +126,7 @@ const TxtContatiner = styled.div<styleType>`
   height: 370px;
   color: white;
   font-size: ${(props) => (props.$ismobile ? "0.6rem" : "1rem")};
-  line-height: ${(props) => (props.$ismobile ? "15px" : "21px")};
+  line-height: ${(props) => (props.$ismobile ? "15px" : "20px")};
   text-shadow: 0 0 2px #00aa00, 0 0 7px #00aa00, 0 0 17px #00aa00,
     0 0 27px #00aa00, 0 0 10px #00aa00, 0 0 52px #00aa00, 0 0 72px #00aa00;
   transition: opacity 0.5s ease-in-out;
