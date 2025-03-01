@@ -591,7 +591,7 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp
     배포 직전 예상치 못한 문제가 발생해 긴장감이 고조되었지만, 끝까지 해결하며 프로젝트를 완수했습니다.
     이 경험을 통해 완벽한 협업을 목표로 하더라도 갈등은 불가피하며, 그 갈등을 해결하는 과정이 곧 팀워크임을 배웠습니다.`],link:"https://github.com/k-oyun/MindBook-FE"},{image:[d3,Up,Np,$p],part:["[ 프론트엔드, 기획, 디자인 ]","ㆍ 페이지 디자인 및 구현"],task:["ㆍ keyframes를 이용하여 애니메이션 구현","ㆍ useMediaQuery를 이용하여 반응형 웹 구현","ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",l?`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으
     로 감지하고, 헤더 UI에 동적으로 적용`:"ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, 헤더 UI에 동적으로 적용",l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
-       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지"],trouble:[],feeling:[l?`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는
+       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지","ㆍ Aws S3 CloudFront 정적 웹 배포"],trouble:[],feeling:[l?`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는
     과정에서 자신감을 얻었습니다.
     더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`:`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었습니다.
     더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`,l?`ㆍ 이전 프로젝트에서 동적 타입으로 인해 런타임 에러가 발생하는 문제를 경험했
