@@ -654,6 +654,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         isMobile
           ? "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시\n       unobserve()를 호출하여 메모리 누수 방지"
           : "   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지",
+        "ㆍ Aws S3 CloudFront 정적 웹 배포",
       ],
       trouble: [],
       feeling: [
