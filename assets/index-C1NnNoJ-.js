@@ -553,7 +553,7 @@ CSS
 JavaScript`:"HTML, CSS, JavaScript",image:l?lp:sp},{id:4,title:"Portfolio",introduce:"프로젝트 및 프로필 소개를 위한 포트폴리오",period:"2025.02 ~ 2025.02",tech:l?`React
 JavaScript, TypeScript
 Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp:d3}],B=()=>{c(Y=>(Y-1+U.length)%U.length)},H=()=>{c(Y=>(Y+1)%U.length)},V=U[o],k=[{image:[yp,gp,vp,bp,xp,Sp,Cp,Tp,Ap],part:["[ 프론트엔드, 디자인 ]","ㆍ Splash Screen, 아이콘 설정 등 앱 초기 환경 설정",l?`ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 
-    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연결`:"ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연결","ㆍ 바람세기 설정, 개인정보 설정 API 연결","ㆍ 레포트 화면, 사용자 설정 화면 디자인","ㆍ 카카오 로그인 구현","ㆍ 카카오 MAP API를 이용한 주소 검색 구현","ㆍ 서버로부터 전달받은 데이터를 처리하는 정제 함수 모듈화를 통한 코드 단순화","ㆍ API 호출 코드 모듈화를 통한 코드 단순화","ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상","ㆍ 특정 기능 구현 시 IOS 플랫폼의 제약 사항에 맞춰 권한 설정"],task:["ㆍ react-native-modal을 이용하여 모달 구현",l?`ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 
+    메인화면 날씨 정보 설정화면, 메인화면, 레포트 화면 구현 및 API 연동`:"ㆍ 회원가입, 로그인, 비밀번호 재설정, 직장 지역 / 알림 / 사용자 데이터 / 메인화면 날씨 정보 설정, 메인, 레포트 화면 구현 및 API 연동","ㆍ 바람세기 설정, 개인정보 설정 API 연동","ㆍ 레포트 화면, 사용자 설정 화면 디자인","ㆍ 카카오 로그인 구현","ㆍ 카카오 MAP API를 이용한 주소 검색 구현","ㆍ 서버로부터 전달받은 데이터를 처리하는 정제 함수 모듈화를 통한 코드 단순화","ㆍ API 호출 코드 모듈화를 통한 코드 단순화","ㆍ react-query를 통한 데이터 캐싱, API 호출 수 감소 및 효율성 향상","ㆍ 특정 기능 구현 시 IOS 플랫폼의 제약 사항에 맞춰 권한 설정"],task:["ㆍ react-native-modal을 이용하여 모달 구현",l?`ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 
     가리는 경우 스크롤이 가능하도록 구현`:"ㆍ react-native-keyboard-aware-scroll-view를 이용하여 키보드가 입력 칸을 가리는 경우 스크롤이 가능하도록 구현","ㆍ react-navigation을 이용하여 화면 전환 기능 구현",l?`ㆍ gorhom/bottom-sheet, react-native-picker/picker를 이용하여 
     시간을 선택할 수 있는 바텀 시트 구현`:"ㆍ gorhom/bottom-sheet, react-native-picker/picker를 이용하여 시간을 선택할 수 있는 바텀 시트 구현","ㆍ 사용자 설정 토글 구현",l?`ㆍ react-native-community/slider를 이용하여 사용자 민감도 조절이
     가능한 슬라이딩 바 구현`:"ㆍ react-native-community/slider를 이용하여 사용자 민감도 조절이 가능한 슬라이딩 바 구현","ㆍ react-native-seoul/kakao-login을 이용하여 카카오 로그인 구현",l?`ㆍ react-native-background-fetch, react-native-geolocation을 이용하여
@@ -582,7 +582,7 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp
     지 신중하게 접근하는 것이 중요하다는 것을 깨달았습니다.`:`ㆍ 카카오 로그인 및 이미지 갤러리 저장과 같은 기능을 구현하며, iOS의 요구 사항에 맞춰 구현하는 과정에서 많은 시행착오와 학습이 필요했습니다.
     iOS 제약 사항을 고려하여 구현하는 데 어려움을 겪었고, 특히 권한 설정이 제대로 되지 않아 기능이 정상적으로 작동하지 않고 에러가 발생했습니다.
     이 과정에서 Xcode를 활용하여 각각의 기능에 필요한 권한을 정확하게 설정하는 방법을 배우게 되었습니다.`],link:"https://github.com/k-oyun/Waither-FE"},{image:[wp,Lp,_p,jp,Dp,Rp,Op,zp,Vp],part:["[ 프론트엔드, 디자인 ]","ㆍ 페이지 디자인 및 구현"],task:["ㆍ 파일 업로드 기능 구현","ㆍ Header, Footer 컴포넌트 구현","ㆍ 이메일 인증, 비밀번호 재설정 모달 구현","ㆍ 비밀번호, 토큰 등 민감한 정보 보기/숨기기 기능 구현","ㆍ react-router-dom을 이용하여 SPA 내부에서 페이지 이동이 가능하도록 구현"],trouble:[""],feeling:[""],link:"https://github.com/k-oyun/Deploy-Surfing"},{image:[op,up,rp,cp,fp,hp,dp],part:["[ 프론트엔드, 기획 ]",l?`ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API
-    연동`:"ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API 연동"],task:["ㆍ 데이터 정제 함수 구현","ㆍ 도서 추가 시 상태 모달 구현",""],trouble:["ㆍ API 연결 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",l?`   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 
+    연동`:"ㆍ 메인, 전체 책장, 도서 검색, 도서 추가, 도서 독후감 작성 페이지 구현 및 API 연동"],task:["ㆍ 데이터 정제 함수 구현","ㆍ 도서 추가 시 상태 모달 구현",""],trouble:["ㆍ API 연동 중 서버에서의 CORS 에러 발생으로 인한 요청 차단",l?`   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 
        개발 서버 URL을 추가하여 해결`:"   ㆍ Server측에 Access-Control-Allow-Origin 헤더 리스트에 프론트엔드 개발 서버 URL을 추가하여 해결"],feeling:[l?`ㆍ 데드라인이 짧은 해커톤이었기에 빠른 의사소통과 효과적인 협업을 중요시
     했습니다. 배포 직전 예상치 못한 문제가 발생해 긴장감이 고조되었지만, 끝까
     지 해결하며 프로젝트를 완수했습니다. 이 경험을 통해 완벽한 협업을 목표로
@@ -591,7 +591,8 @@ Styled-Components`:"React, JavaScript, TypeScript, Styled-Components",image:l?Bp
     배포 직전 예상치 못한 문제가 발생해 긴장감이 고조되었지만, 끝까지 해결하며 프로젝트를 완수했습니다.
     이 경험을 통해 완벽한 협업을 목표로 하더라도 갈등은 불가피하며, 그 갈등을 해결하는 과정이 곧 팀워크임을 배웠습니다.`],link:"https://github.com/k-oyun/MindBook-FE"},{image:[d3,Up,Np,$p],part:["[ 프론트엔드, 기획, 디자인 ]","ㆍ 페이지 디자인 및 구현"],task:["ㆍ keyframes를 이용하여 애니메이션 구현","ㆍ useMediaQuery를 이용하여 반응형 웹 구현","ㆍ scroll-snap 속성을 이용하여 원페이지 스크롤 구현",l?`ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으
     로 감지하고, 헤더 UI에 동적으로 적용`:"ㆍ IntersectionObserver API를 이용하여 현재 보고 있는 컴포넌트를 실시간으로 감지하고, 헤더 UI에 동적으로 적용",l?`   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시
-       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지","ㆍ Aws S3 CloudFront 정적 웹 배포"],trouble:[],feeling:[l?`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는
+       unobserve()를 호출하여 메모리 누수 방지`:"   ㆍ useEffect를 이용하여  observe()를 설정하고, 컴포넌트 언마운트 시 unobserve()를 호출하여 메모리 누수 방지","ㆍ Aws S3 CloudFront 정적 웹 배포",l?`   ㆍ CDN을 활용하여 이미지 응답 시간을 약 12배 단축시키고,
+       전체 콘텐츠 전송 성능 최적화`:"   ㆍ CDN을 활용하여 이미지 응답 시간을 약 12배 단축시키고, 전체 콘텐츠 전송 성능 최적화"],trouble:[],feeling:[l?`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는
     과정에서 자신감을 얻었습니다.
     더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`:`ㆍ 처음으로 반응형 웹 프로젝트를 진행하며 새로운 기술을 익히고 적용하는 과정에서 자신감을 얻었습니다.
     더 도전적인 프로젝트에도 유연하게 적응할 수 있다는 확신이 생겼습니다.`,l?`ㆍ 이전 프로젝트에서 동적 타입으로 인해 런타임 에러가 발생하는 문제를 경험했
