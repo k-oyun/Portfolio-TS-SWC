@@ -69,7 +69,6 @@ const BannerContainer = styled.div<styleType>`
   height: ${(props) => (props.$ismobile ? "250px" : "320px")};
   transition: opacity 0.5s ease-in-out;
   margin-top: ${(props) => (props.$ismobile ? "100px" : "120px")};
-  /* background-color: red; */
 `;
 
 const muscleManShaking = keyframes`
@@ -86,7 +85,7 @@ const muscleManShaking = keyframes`
     transform: rotate(20deg); 
   }
   100% {
-    transform: rotate(0deg); /* 원래 각도로 돌아옴 */
+    transform: rotate(0deg); 
   }
 `;
 
@@ -108,9 +107,6 @@ const BannerImgContainer = styled.div<styleType>`
 `;
 
 const MyImg = styled.img<styleType>`
-  /* 원래 사진 비율  */
-  /* width: 32px; */
-  /* height: 41px; */
   width: ${(props) => (props.$ismobile ? "64px" : "128px")};
   height: ${(props) => (props.$ismobile ? "82px" : "164px")};
   margin-top: ${(props) => (props.$ismobile ? "20px" : "0px")};
