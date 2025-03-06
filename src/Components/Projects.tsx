@@ -8,6 +8,7 @@ import { useProjectMousePosition } from "../Hooks/useProjectMousePosition";
 import { useProjectScreenSwap } from "../Hooks/useProjectSwap";
 import { useProjectDetail } from "../Hooks/useProjectDetailSwap";
 import { Project, useProjectData } from "../Datas/useProjectData";
+import { NextBtnPath, PreviousBtnPath } from "../Assets/Svgs/SvgPath";
 
 interface styleType {
   $ismobile?: boolean;
@@ -414,7 +415,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
                 $ismobile={isMobile}
                 onClick={beforeProjectDetailImg}
               >
-                <path d="M15.75 19.5 8.25 12l7.5-7.5" />
+                <path d={PreviousBtnPath} />
               </PreviousBtn>
               <ModalScreen
                 $ismobile={isMobile}
@@ -431,7 +432,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
                 $ismobile={isMobile}
                 onClick={nextProjectDetailImg}
               >
-                <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                <path d={NextBtnPath} />
               </NextBtn>
             </ModalScreenContainer>
 
@@ -501,7 +502,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
             onClick={beforeProject}
             $ismobile={isMobile}
           >
-            <path d="M15.75 19.5 8.25 12l7.5-7.5" />
+            <path d={PreviousBtnPath} />
           </PreviousBtn>
           <ProjectScreen
             $ismobile={isMobile}
@@ -537,7 +538,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
             onClick={nextProject}
             $ismobile={isMobile}
           >
-            <path d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            <path d={NextBtnPath} />
           </NextBtn>
         </ProjectScreenContainer>
         <SpeechBubbleContainer
