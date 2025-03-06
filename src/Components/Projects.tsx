@@ -4,7 +4,7 @@ import mobile from "/mobile.png";
 import pc from "/pc.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import { useProjectScreenEnter } from "../Hooks/useProjectScreenEnter";
+import { useProjectMousePosition } from "../Hooks/useProjectMousePosition";
 import { useProjectScreenSwap } from "../Hooks/useProjectSwap";
 import { useProjectDetail } from "../Hooks/useProjectDetail";
 import { Project, useProjectData } from "../Datas/useProjectData";
@@ -261,20 +261,20 @@ const ModalScreenContainer = styled.div<styleType>`
   width: ${(props) =>
     props.$isselectedWaither
       ? props.$ismobile
-        ? "200px" // $isselectedWaither가 true이고 모바일일 때의 width
-        : "500px" // $isselectedWaither가 true이고 컴퓨터일 때의 width
+        ? "200px"
+        : "500px"
       : props.$ismobile
-      ? "400px" // $isselectedWaither가 false이고 모바일일 때의 width
-      : "800px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 width
+      ? "400px"
+      : "800px"};
 
   height: ${(props) =>
     props.$isselectedWaither
       ? props.$ismobile
-        ? "320px" // $isselectedWaither가 true이고 모바일일 때의 height
-        : "620px" // $isselectedWaither가 true이고 컴퓨터일 때의 height
+        ? "320px"
+        : "620px"
       : props.$ismobile
-      ? "140px" // $isselectedWaither가 false이고 모바일일 때의 height
-      : "365px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 height
+      ? "140px"
+      : "365px"};
 `;
 
 const ModalScreen = styled.div<styleType>`
@@ -284,20 +284,20 @@ const ModalScreen = styled.div<styleType>`
   width: ${(props) =>
     props.$isselectedWaither
       ? props.$ismobile
-        ? "300px;" // $isselectedWaither가 true이고 모바일일 때의 width
-        : "300px" // $isselectedWaither가 true이고 컴퓨터일 때의 width
+        ? "300px;"
+        : "300px"
       : props.$ismobile
-      ? "250px" // $isselectedWaither가 false이고 모바일일 때의 width !!!!
-      : "650px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 width!!!!
+      ? "250px"
+      : "650px"};
 
   height: ${(props) =>
     props.$isselectedWaither
       ? props.$ismobile
-        ? "315px" // $isselectedWaither가 true이고 모바일일 때의 height
-        : "615px" // $isselectedWaither가 true이고 컴퓨터일 때의 height
+        ? "315px"
+        : "615px"
       : props.$ismobile
-      ? "140px" // $isselectedWaither가 false이고 모바일일 때의 height !!!!
-      : "365px"}; // $isselectedWaither가 false이고 컴퓨터일 때의 height !!!!!
+      ? "140px"
+      : "365px"};
   background-image: ${(props) => `url(${props.$detailimage})`};
   background-position: center;
   background-size: cover;
@@ -306,11 +306,11 @@ const ModalScreen = styled.div<styleType>`
   border: ${(props) =>
     props.$isselectedWaither
       ? props.$ismobile
-        ? "" // $isselectedWaither가 true이고 모바일일 때의 border
-        : "" // $isselectedWaither가true이고 컴퓨터일 때의 border
+        ? ""
+        : ""
       : props.$ismobile
-      ? "2px solid white" // $isselectedWaither가 false이고 모바일일 때의 border
-      : "5px solid white"}; // $isselectedWaither가 false이고 컴퓨터일 때의 border
+      ? "2px solid white"
+      : "5px solid white"};
   transition: box-shadow 0.5s ease-in-out, border 0.5s ease;
 `;
 
@@ -385,7 +385,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
     query: "(max-width:767px)",
   });
   const { isMouseEnter, onMouseScreenEnter, onMouseScreenLeave } =
-    useProjectScreenEnter();
+    useProjectMousePosition();
   const { currentProject, beforeProject, nextProject } = useProjectScreenSwap();
   const {
     projectsDetail,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useProjectScreenEnter = () => {
+export const useProjectMousePosition = () => {
   const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false);
 
   const onMouseScreenEnter = () => {
