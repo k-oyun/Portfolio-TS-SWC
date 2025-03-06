@@ -16,7 +16,7 @@ export type Project = {
   image: string;
 };
 export const useProjectData = (isMobile: boolean): Project[] => {
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "Waither",

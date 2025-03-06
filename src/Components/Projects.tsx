@@ -1,20 +1,19 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect } from "react";
 import { keyframes, styled } from "styled-components";
 import mobile from "/mobile.png";
 import pc from "/pc.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import {
-  ProjectDetail,
-  useProjectDetailData,
-} from "../Datas/useProjectDetailData";
+import { useProjectScreenEnter } from "../Hooks/useProjectScreenEnter";
+import { useProjectScreenSwap } from "../Hooks/useProjectSwap";
+import { useProjectDetail } from "../Hooks/useProjectDetail";
 import { Project, useProjectData } from "../Datas/useProjectData";
 
 interface styleType {
   $ismobile?: boolean;
   $image?: string;
   $detailimage?: string;
-  $ismousehover?: boolean;
+  $ismouseenter?: boolean;
   $ismodalon?: boolean;
   $isselectedWaither?: boolean;
 }
@@ -146,7 +145,7 @@ const ProjectCard = styled.div<styleType>`
   align-items: flex-start;
   padding-top: ${(props) => (props.$ismobile ? "20px" : "1.4rem")};
   padding-left: ${(props) => (props.$ismobile ? "30px" : "3.1rem")};
-  opacity: ${(props) => (props.$ismousehover ? 0.9 : 0)};
+  opacity: ${(props) => (props.$ismouseenter ? 0.9 : 0)};
   transition: opacity 1s ease-in-out;
   color: white;
 `;
@@ -375,7 +374,7 @@ const SpeechBubbleContainer = styled.div<styleType>`
 
   font-family: "Neon";
   filter: ${(props) =>
-    props.$ismousehover
+    props.$ismouseenter
       ? " drop-shadow(0 0 5px red) drop-shadow(0 0 10px red)drop-shadow(0 0 10px red)"
       : " drop-shadow(0 0 5px #f148fb) drop-shadow(0 0 10px #f148fb) drop-shadow(0 0 10px #f148fb)"};
   animation: ${electricShock} 1s infinite;
@@ -385,51 +384,25 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
-  const [currentProject, setCurrentProject] = useState<number>(0);
-  const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
-  const [isModalOn, setIsModalOn] = useState<boolean>(false);
-  const [selectedProject, setSelectedProject] = useState<number>(0);
-  const [selectedProjectDetailImg, setSelectedProjectDetailImg] =
-    useState<number>(0);
-  const projects: Project[] = useProjectData(isMobile);
-  const projectsDetail: ProjectDetail[] = useProjectDetailData(isMobile);
+  const { isMouseEnter, onMouseScreenEnter, onMouseScreenLeave } =
+    useProjectScreenEnter();
+  const { currentProject, beforeProject, nextProject } = useProjectScreenSwap();
+  const {
+    projectsDetail,
+    isModalOn,
+    selectedProject,
+    selectedProjectDetailImg,
+    setSelectedProject,
+    beforeProjectDetailImg,
+    nextProjectDetailImg,
+    onClickDetail,
+    setIsModalOn,
+  } = useProjectDetail();
+  const project: Project[] = useProjectData(isMobile);
 
-  const onMouseScreenEnter = () => {
-    setIsMouseHover(true);
-  };
-  const onMouseScreenLeave = () => {
-    setIsMouseHover(false);
-  };
-
-  const onClickDetail = () => {
+  useEffect(() => {
     setSelectedProject(currentProject);
-    setSelectedProjectDetailImg(0);
-    setIsModalOn(true);
-    console.log(isModalOn);
-  };
-
-  const project = projects[currentProject];
-  const beforeProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-  const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length);
-  };
-
-  const beforeProjectDetailImg = () => {
-    setSelectedProjectDetailImg(
-      (prev) =>
-        (prev - 1 + projectsDetail[selectedProject].image.length) %
-        projectsDetail[selectedProject].image.length
-    );
-    console.log(selectedProjectDetailImg);
-  };
-  const nextProjectDetailImg = () => {
-    setSelectedProjectDetailImg(
-      (prev) => (prev + 1) % projectsDetail[selectedProject].image.length
-    );
-  };
-
+  }, [currentProject]);
   return (
     <>
       {selectedProject !== null ? (
@@ -456,7 +429,6 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
                 }
                 $isselectedWaither={selectedProject === 0}
               />
-              {/* ))} */}
               <NextBtn
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -537,19 +509,27 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
           </PreviousBtn>
           <ProjectScreen
             $ismobile={isMobile}
-            $image={project.image}
-            key={project.id}
+            $image={project[currentProject].image}
+            key={project[currentProject].id}
             onMouseEnter={onMouseScreenEnter}
             onMouseLeave={onMouseScreenLeave}
           >
-            <ProjectCard $ismousehover={isMouseHover} $ismobile={isMobile}>
-              <ProjectTitle $ismobile={isMobile}>{project.title}</ProjectTitle>
+            <ProjectCard $ismouseenter={isMouseEnter} $ismobile={isMobile}>
+              <ProjectTitle $ismobile={isMobile}>
+                {project[currentProject].title}
+              </ProjectTitle>
               <SubTitle $ismobile={isMobile}>Project Introduce</SubTitle>
-              <ContentTxt $ismobile={isMobile}>{project.introduce}</ContentTxt>
+              <ContentTxt $ismobile={isMobile}>
+                {project[currentProject].introduce}
+              </ContentTxt>
               <SubTitle $ismobile={isMobile}>Period</SubTitle>
-              <ContentTxt $ismobile={isMobile}>{project.period}</ContentTxt>
+              <ContentTxt $ismobile={isMobile}>
+                {project[currentProject].period}
+              </ContentTxt>
               <SubTitle $ismobile={isMobile}>Tech</SubTitle>
-              <ContentTxt $ismobile={isMobile}>{project.tech}</ContentTxt>
+              <ContentTxt $ismobile={isMobile}>
+                {project[currentProject].tech}
+              </ContentTxt>
               <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
                 Detail
               </DetailTxt>
@@ -566,9 +546,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         </ProjectScreenContainer>
         <SpeechBubbleContainer
           $ismobile={isMobile}
-          $ismousehover={isMouseHover}
+          $ismouseenter={isMouseEnter}
         >
-          {isMouseHover
+          {isMouseEnter
             ? isMobile
               ? "Touch Detail"
               : "Click Detail"
