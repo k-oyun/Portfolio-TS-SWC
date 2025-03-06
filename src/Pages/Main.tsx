@@ -4,18 +4,11 @@ import AboutMe from "../Components/AboutMe";
 import { useEffect, useRef, useState } from "react";
 import Projects from "../Components/Projects";
 import Skills from "../Components/Skills";
-// import AboutMe from "../Components/AboutMe";
-// import Skills from "../Components/Skills";
-// import Projects from "../Components/Projects";
 
 const MainContainer = styled.div`
   width: 100%;
   height: 100vh;
-  /* 짙은 남색 */
-  /* background-color: #141827; */
-  /* 밝은 남색 */
-  /* background-color: #11264f; */
-  /* 검정 배경 */
+
   background-color: black;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -35,8 +28,8 @@ function King() {
   const ScrollMove = (componentRef: React.RefObject<HTMLDivElement | null>) => {
     if (componentRef.current) {
       componentRef.current.scrollIntoView({
-        behavior: "smooth", // 부드럽게 스크롤
-        block: "start", // 시작 부분으로 스크롤
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -106,10 +99,6 @@ function King() {
       <Component>
         <Projects ref={projectsRef} />
       </Component>
-
-      {/* <AboutMe />
-      <Skills />
-      <Projects ref={projectsRef} /> */}
     </MainContainer>
   );
 }

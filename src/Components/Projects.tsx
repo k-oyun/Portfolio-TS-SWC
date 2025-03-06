@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import { useProjectMousePosition } from "../Hooks/useProjectMousePosition";
 import { useProjectScreenSwap } from "../Hooks/useProjectSwap";
-import { useProjectDetail } from "../Hooks/useProjectDetail";
+import { useProjectDetail } from "../Hooks/useProjectDetailSwap";
 import { Project, useProjectData } from "../Datas/useProjectData";
 
 interface styleType {
@@ -139,7 +139,6 @@ const ProjectCard = styled.div<styleType>`
   width: ${(props) => (props.$ismobile ? "290px" : "100%")};
   height: ${(props) => (props.$ismobile ? "550px" : "600px")};
   background-color: black;
-  /* font-family: "Neon"; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -153,8 +152,6 @@ const ProjectCard = styled.div<styleType>`
 const ProjectTitle = styled.span<styleType>`
   padding-bottom: ${(props) => (props.$ismobile ? "4px" : "1.8rem")};
   font-size: ${(props) => (props.$ismobile ? "20px" : "40px")};
-  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   text-shadow: 0 0 1px, 0 0 7px blue, 0 0 10px blue, 0 0 5px blue, 0 0 33px blue,
     0 0 0px blue, 0 0 0px blue;
 `;
@@ -229,7 +226,7 @@ const ModalContainer = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* 전체 모달에서 스크롤 가능 */
+  overflow-y: auto;
   z-index: 300;
   padding: 20px;
 `;
@@ -245,7 +242,6 @@ const Modal = styled.div<styleType>`
   z-index: 100;
   top: 0;
   padding-bottom: 30px;
-  /* font-family: "Neon"; */
   color: white;
   overflow-y: auto;
   visibility: ${(props) => (props.$ismodalon ? "visible" : "hidden")};

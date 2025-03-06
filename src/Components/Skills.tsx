@@ -105,7 +105,6 @@ const OnSwitchSvg = styled(motion.svg)<styleType>`
     drop-shadow(0 0 15px yellow);
   animation: ${onFlicker} 2s ease-in-out forwards;
 `;
-// ------------------------------------------
 
 const LogoContainer = styled.div<styleType>`
   width: ${(props) => (props.$ismobile ? "380px" : "1500px")};
@@ -115,7 +114,6 @@ const LogoContainer = styled.div<styleType>`
   flex-direction: column;
   position: relative;
   margin-top: ${(props) => (props.$ismobile ? "100px" : "130px")};
-  /* background-color: blue; */
 `;
 
 const IconContainer = styled.div<styleType>`
@@ -128,9 +126,7 @@ const IconContainer = styled.div<styleType>`
   height: ${(props) => (props.$ismobile ? "100px" : "180px")};
   margin-top: ${(props) => (props.$ismobile ? "80px" : "100px")};
   margin-bottom: ${(props) => (props.$ismobile ? "0px" : "50px")};
-  /* background-color: green; */
 `;
-//------------------------------------------------------------
 
 const HTMLSvg = styled.svg<styleType>`
   stroke: ${(props) => (props.$ispoweron ? "white" : "grey")};
@@ -210,7 +206,6 @@ const ReactSvg = styled.svg<styleType>`
   &:hover {
     ${({ $ispoweron }) => $ispoweron && `transform: scale(1.1);`}
   }
-  /* background-color: red; */
 `;
 const ReactQuerySvg = styled.svg<styleType>`
   width: ${(props) => (props.$ismobile ? "40px" : "200px")};
