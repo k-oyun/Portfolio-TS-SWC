@@ -6,4 +6,7 @@ export default defineConfig({
   base: "Portfolio-TS-SWC",
   plugins: [react()],
   assetsInclude: ["**/*.JPG", "**/*.JPEG", "**/*.png", "**/*.gif", "**/*.svg"], // 확장자 추가,
+  define: {
+    global: {},
+  },
 });
