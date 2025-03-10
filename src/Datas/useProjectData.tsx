@@ -33,7 +33,7 @@ export const useProjectData = (isMobile: boolean): Project[] => {
       id: 2,
       title: "Defloy Surfing",
       introduce: "Github, AWS, Docker를 활용한 CI/CD 자동 구축 서비스",
-      period: "2024.03 ~ ing",
+      period: "2025.03 ~ ing",
       tech: isMobile
         ? "React\nJavaScript, TypeScript\nStyled-Components"
         : "React, JavaScript, TypeScript, Styled-Components",

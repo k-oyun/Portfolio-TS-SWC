@@ -31,14 +31,16 @@ export const useSkillMousePosition = (isPowerOn: boolean) => {
             Fetch를 통한 비동기 통신
             <br />
             json형태 데이터 가공 및 활용
+            <br />
+            axios를 통한 비동기 통신
           </>
         );
       }
       if (skillType === "ts") {
         setExplainMsg(
           <>
-            타입 명시를 통한 에러 방지
-            <br /> 가독성 향상
+            타입 명시를 통한 런타임 에러 방지
+            <br /> 코드 가독성 및 유지보수성 향상
           </>
         );
       }
@@ -56,8 +58,8 @@ export const useSkillMousePosition = (isPowerOn: boolean) => {
       if (skillType === "reactquery") {
         setExplainMsg(
           <>
-            서버 상태 관리 간소화
-            <br /> 캐싱을 통한 성능 향상을 위해 react-query 사용
+            react-query를 통한 서버 상태 관리 간소화
+            <br /> 데이터 캐싱을 통한 성능 향상
           </>
         );
       }
@@ -66,8 +68,7 @@ export const useSkillMousePosition = (isPowerOn: boolean) => {
           <>
             css-in-js 구현
             <br /> Props를 통한 조건부 스타일링
-            <br /> 태그가 아닌 JSX 형식을 통한 가독성 향상을 위해
-            styled-component 사용
+            <br /> JSX 형식을 통한 가독성 향상을 위해 styled-component 사용
           </>
         );
       }
