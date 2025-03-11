@@ -109,7 +109,7 @@ const ProjectsContainer = styled.div<styleType>`
 
 const ProjectScreenContainer = styled.div<styleType>`
   width: 100%;
-  height: 600px;
+  height: ${(props) => (props.$ismobile ? "510px" : "600px")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +124,7 @@ const ProjectScreen = styled.div<styleType>`
   align-items: center;
   justify-content: center;
   width: ${(props) => (props.$ismobile ? "290px" : "1200px")};
-  height: ${(props) => (props.$ismobile ? "510px" : "570px")};
+  height: ${(props) => (props.$ismobile ? "480px" : "570px")};
   background-image: ${(props) => `url(${props.$image})`};
   background-position: center;
   background-size: cover;
@@ -495,7 +495,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
       ) : null}
 
       <ProjectsContainer ref={ref} $ismodalon={isModalOn}>
-        <ProjectScreenContainer>
+        <ProjectScreenContainer $ismobile={isMobile}>
           <PreviousBtn
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
