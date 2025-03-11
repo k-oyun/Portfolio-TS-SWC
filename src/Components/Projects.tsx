@@ -161,16 +161,33 @@ const ContentTxt = styled.span<styleType>`
   white-space: pre-wrap;
   line-height: 20px;
 `;
+const DetailTxtAnimation = keyframes`
+0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }`;
 
-// const DetailTxt = styled.span<styleType>`
-//   padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
-//   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
-//   font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
-//   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
-//     0 0 0px red, 0 0 0px red;
-//   cursor: pointer;
-//   animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
-// `;
+const DetailTxt = styled.span`
+  position: absolute;
+  right: 66px;
+  top: 463px;
+  font-size: "15px";
+  text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
+    0 0 0px red, 0 0 0px red;
+  cursor: pointer;
+  animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
+`;
 
 const PreviousBtn = styled(motion.svg)<styleType>`
   width: ${(props) => (props.$ismobile ? "30px" : "50px")};
@@ -507,7 +524,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
             <ProjectCard
               $ismouseenter={isMouseEnter}
               $ismobile={isMobile}
-              onClick={onClickDetail}
+              onClick={isMobile ? undefined : onClickDetail}
             >
               <ProjectTitle $ismobile={isMobile}>
                 {project[currentProject].title}
@@ -524,9 +541,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
               <ContentTxt $ismobile={isMobile}>
                 {project[currentProject].tech}
               </ContentTxt>
-              {/* <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
-                Detail
-              </DetailTxt> */}
+              {isMobile ? (
+                <DetailTxt onClick={onClickDetail}>Detail</DetailTxt>
+              ) : null}
             </ProjectCard>
           </ProjectScreen>
           <NextBtn
@@ -544,7 +561,7 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         >
           {isMouseEnter
             ? isMobile
-              ? "Touch it one more Time"
+              ? "Touch Detail"
               : "Click The Screen"
             : isMobile
             ? "Touch The Screen"
