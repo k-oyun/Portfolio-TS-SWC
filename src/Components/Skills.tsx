@@ -324,8 +324,10 @@ const IconTxtContainer = styled.p<styleType>`
   padding-bottom: ${(props) => (props.$ismobile ? "120px" : "70px")};
   font-size: ${(props) => (props.$ismobile ? "10px" : "20px")};
   white-space: nowrap;
-  text-shadow: 0 0 1px, 0 0 7px #00ffff, 0 0 10px #00ffff, 0 0 5px #00ffff,
-    0 0 33px #00ffff, 0 0 0px #00ffff, 0 0 0px #00ffff;
+  /* text-shadow: 0 0 1px, 0 0 7px #00ffff, 0 0 10px #00ffff, 0 0 5px #00ffff,
+    0 0 33px #00ffff, 0 0 0px #00ffff, 0 0 0px #00ffff; */
+  text-shadow: 0 0 1px, 0 0 1px #00ffff, 0 0 2px #00ffff, 0 0 1px #00ffff,
+    0 0 10px #00ffff, 0 0 0px #00ffff, 0 0 0px #00ffff;
 `;
 
 const Skills = forwardRef<HTMLDivElement, any>((_, ref) => {

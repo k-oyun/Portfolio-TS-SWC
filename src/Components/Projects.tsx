@@ -145,19 +145,19 @@ const ProjectTitle = styled.span<styleType>`
 const SubTitle = styled.span<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "50px" : "2.5rem")};
   font-size: ${(props) => (props.$ismobile ? "15px" : "1.86rem")};
-  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
 `;
 
 const ContentTxt = styled.span<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "15px" : "1.87rem")};
   font-size: ${(props) => (props.$ismobile ? "10px" : "1.25rem")};
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
-  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 1px #f148fb, 0 0 5px #f148fb,
+    0 0 3px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   white-space: pre-wrap;
   line-height: 20px;
 `;
@@ -328,10 +328,10 @@ const ModalCloseBtn = styled.button<styleType>`
 const ModalMainTitle = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "15px" : "30px")};
   margin: ${(props) => (props.$ismobile ? "10px 0" : "20px 0")};
-  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
 `;
 const ModalContent = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "8px" : "1rem")};
