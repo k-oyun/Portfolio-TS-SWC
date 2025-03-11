@@ -134,6 +134,7 @@ const ProjectScreen = styled.div<styleType>`
     props.$ismobile ? "2px solid white" : "5px solid white"};
   overflow: hidden;
   transition: box-shadow 0.5s ease-in-out, border 0.5s ease;
+  cursor: pointer;
 `;
 
 const ProjectCard = styled.div<styleType>`
@@ -146,6 +147,7 @@ const ProjectCard = styled.div<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "20px" : "1.4rem")};
   padding-left: ${(props) => (props.$ismobile ? "30px" : "3.1rem")};
   opacity: ${(props) => (props.$ismouseenter ? 0.9 : 0)};
+  cursor: ${(props) => (props.$ismouseenter ? "pointer" : "default")};
   transition: opacity 1s ease-in-out;
   color: white;
 `;
@@ -511,7 +513,11 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
             onMouseEnter={onMouseScreenEnter}
             onMouseLeave={onMouseScreenLeave}
           >
-            <ProjectCard $ismouseenter={isMouseEnter} $ismobile={isMobile}>
+            <ProjectCard
+              $ismouseenter={isMouseEnter}
+              $ismobile={isMobile}
+              onClick={onClickDetail}
+            >
               <ProjectTitle $ismobile={isMobile}>
                 {project[currentProject].title}
               </ProjectTitle>
@@ -527,9 +533,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
               <ContentTxt $ismobile={isMobile}>
                 {project[currentProject].tech}
               </ContentTxt>
-              <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
+              {/* <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
                 Detail
-              </DetailTxt>
+              </DetailTxt> */}
             </ProjectCard>
           </ProjectScreen>
           <NextBtn
@@ -547,8 +553,8 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         >
           {isMouseEnter
             ? isMobile
-              ? "Touch Detail"
-              : "Click Detail"
+              ? "Touch it one more Time"
+              : "Click The Screen"
             : isMobile
             ? "Touch The Screen"
             : "Put Your Mouse On The Screen"}
