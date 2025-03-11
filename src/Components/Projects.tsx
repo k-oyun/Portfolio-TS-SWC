@@ -41,23 +41,6 @@ const ModalCloseBtnAnimation = keyframes`
       filter: brightness(1); 
   }`;
 
-const DetailTxtAnimation = keyframes`
-0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  75% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(0);
-  }`;
-
 const electricShock = keyframes`
   0% {
     opacity: 1;
@@ -134,6 +117,7 @@ const ProjectScreen = styled.div<styleType>`
     props.$ismobile ? "2px solid white" : "5px solid white"};
   overflow: hidden;
   transition: box-shadow 0.5s ease-in-out, border 0.5s ease;
+  cursor: pointer;
 `;
 
 const ProjectCard = styled.div<styleType>`
@@ -146,6 +130,7 @@ const ProjectCard = styled.div<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "20px" : "1.4rem")};
   padding-left: ${(props) => (props.$ismobile ? "30px" : "3.1rem")};
   opacity: ${(props) => (props.$ismouseenter ? 0.9 : 0)};
+  cursor: ${(props) => (props.$ismouseenter ? "pointer" : "default")};
   transition: opacity 1s ease-in-out;
   color: white;
 `;
@@ -162,26 +147,30 @@ const SubTitle = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "15px" : "1.86rem")};
   text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
 `;
 
 const ContentTxt = styled.span<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "15px" : "1.87rem")};
   font-size: ${(props) => (props.$ismobile ? "10px" : "1.25rem")};
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 1px #f148fb, 0 0 5px #f148fb,
+    0 0 3px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   white-space: pre-wrap;
   line-height: 20px;
 `;
 
-const DetailTxt = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
-  padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
-  font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
-  text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
-    0 0 0px red, 0 0 0px red;
-  cursor: pointer;
-  animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
-`;
+// const DetailTxt = styled.span<styleType>`
+//   padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
+//   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
+//   font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
+//   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
+//     0 0 0px red, 0 0 0px red;
+//   cursor: pointer;
+//   animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
+// `;
 
 const PreviousBtn = styled(motion.svg)<styleType>`
   width: ${(props) => (props.$ismobile ? "30px" : "50px")};
@@ -341,11 +330,15 @@ const ModalMainTitle = styled.span<styleType>`
   margin: ${(props) => (props.$ismobile ? "10px 0" : "20px 0")};
   text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
     0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
 `;
 const ModalContent = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "8px" : "1rem")};
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   white-space: pre-wrap;
   line-height: ${(props) => (props.$ismobile ? "13px" : " 30px")};
 `;
@@ -511,7 +504,11 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
             onMouseEnter={onMouseScreenEnter}
             onMouseLeave={onMouseScreenLeave}
           >
-            <ProjectCard $ismouseenter={isMouseEnter} $ismobile={isMobile}>
+            <ProjectCard
+              $ismouseenter={isMouseEnter}
+              $ismobile={isMobile}
+              onClick={onClickDetail}
+            >
               <ProjectTitle $ismobile={isMobile}>
                 {project[currentProject].title}
               </ProjectTitle>
@@ -527,9 +524,9 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
               <ContentTxt $ismobile={isMobile}>
                 {project[currentProject].tech}
               </ContentTxt>
-              <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
+              {/* <DetailTxt $ismobile={isMobile} onClick={onClickDetail}>
                 Detail
-              </DetailTxt>
+              </DetailTxt> */}
             </ProjectCard>
           </ProjectScreen>
           <NextBtn
@@ -547,8 +544,8 @@ const Projects = forwardRef<HTMLDivElement, any>((_, ref) => {
         >
           {isMouseEnter
             ? isMobile
-              ? "Touch Detail"
-              : "Click Detail"
+              ? "Touch it one more Time"
+              : "Click The Screen"
             : isMobile
             ? "Touch The Screen"
             : "Put Your Mouse On The Screen"}
