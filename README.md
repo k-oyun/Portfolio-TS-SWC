@@ -4,10 +4,6 @@
 #### 크게 Header, About Me, Skills, Projects 컴포넌트로 구성되어 있습니다.
 <br />
 
-# ⛓️‍💥 배포 링크
-https://dpmpbca232u7x.cloudfront.net/
-
-<br />
 
 # 🧾 기능
 ### Header
