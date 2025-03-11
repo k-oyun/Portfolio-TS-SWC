@@ -41,23 +41,6 @@ const ModalCloseBtnAnimation = keyframes`
       filter: brightness(1); 
   }`;
 
-const DetailTxtAnimation = keyframes`
-0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  75% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(0);
-  }`;
-
 const electricShock = keyframes`
   0% {
     opacity: 1;
@@ -162,8 +145,10 @@ const ProjectTitle = styled.span<styleType>`
 const SubTitle = styled.span<styleType>`
   padding-top: ${(props) => (props.$ismobile ? "50px" : "2.5rem")};
   font-size: ${(props) => (props.$ismobile ? "15px" : "1.86rem")};
-  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
+  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
 `;
 
 const ContentTxt = styled.span<styleType>`
@@ -171,19 +156,21 @@ const ContentTxt = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "10px" : "1.25rem")};
   text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
     0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
   white-space: pre-wrap;
   line-height: 20px;
 `;
 
-const DetailTxt = styled.span<styleType>`
-  padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
-  padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
-  font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
-  text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
-    0 0 0px red, 0 0 0px red;
-  cursor: pointer;
-  animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
-`;
+// const DetailTxt = styled.span<styleType>`
+//   padding-top: ${(props) => (props.$ismobile ? "40px" : "2.15rem")};
+//   padding-left: ${(props) => (props.$ismobile ? "220px" : "0px")};
+//   font-size: ${(props) => (props.$ismobile ? "15px" : "1.56rem")};
+//   text-shadow: 0 0 1px, 0 0 7px red, 0 0 10px red, 0 0 5px red, 0 0 33px red,
+//     0 0 0px red, 0 0 0px red;
+//   cursor: pointer;
+//   animation: ${DetailTxtAnimation} 1s ease-in-out infinite;
+// `;
 
 const PreviousBtn = styled(motion.svg)<styleType>`
   width: ${(props) => (props.$ismobile ? "30px" : "50px")};
@@ -341,13 +328,17 @@ const ModalCloseBtn = styled.button<styleType>`
 const ModalMainTitle = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "15px" : "30px")};
   margin: ${(props) => (props.$ismobile ? "10px 0" : "20px 0")};
-  text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
-    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
+  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
 `;
 const ModalContent = styled.span<styleType>`
   font-size: ${(props) => (props.$ismobile ? "8px" : "1rem")};
-  text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
-    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb;
+  /* text-shadow: 0 0 1px, 0 0 7px #f148fb, 0 0 10px #f148fb, 0 0 5px #f148fb,
+    0 0 33px #f148fb, 0 0 0px #f148fb, 0 0 0px #f148fb; */
+  /* text-shadow: 0 0 1px, 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 5px #00ff00,
+    0 0 33px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00; */
   white-space: pre-wrap;
   line-height: ${(props) => (props.$ismobile ? "13px" : " 30px")};
 `;
